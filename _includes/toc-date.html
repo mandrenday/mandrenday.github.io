@@ -1,0 +1,45 @@
+<div class="book-summary">
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            {% if page.url == "/index.html" or page.url == "/" %}
+            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+            {% else %}
+            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+            {% endif %}
+                <a href="{{site.baseurl}}/">
+                    {{ site.title | escape }}
+                </a>
+            </li>
+
+            
+{% comment %}
+  Create an empty array to store unique category names
+{% endcomment %}
+{% assign unique_categories = "" | split: "" %}
+
+{% for post in site.posts %}
+  {% unless unique_categories contains post.category %}
+    {% assign unique_categories = unique_categories | push: post.category %}
+  {% endunless %}
+{% endfor %}
+
+{% for category in unique_categories %}
+  <li><span class="category-title" onclick="toggleCategory('{{ category }}')">{{ category }}</span>
+    <ul id="{{ category }}" class="category-posts">
+      {% for post in site.posts %}
+        {% if post.category == category %}
+          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+    </nav>
+</div>
