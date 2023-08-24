@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Mandren Blog
+title: Mandren's Blog
 permalink: /
 ---
 
