@@ -1,5 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2023-08-23T22:29:44+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren Blog</title><subtitle>Build Jekyll site with the GitBook style.
-</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">Markov</title><link href="http://localhost:5555/learning/2023-08-23-Markov.html" rel="alternate" type="text/html" title="Markov" /><published>2023-08-23T00:00:00+08:00</published><updated>2023-08-23T00:00:00+08:00</updated><id>http://localhost:5555/learning/Markov</id><content type="html" xml:base="http://localhost:5555/learning/2023-08-23-Markov.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2023-08-24T10:29:08+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren Blog</title><subtitle>Build Jekyll site with the GitBook style.
+</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">Learning Content</title><link href="http://localhost:5555/tool/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/tool/content</id><content type="html" xml:base="http://localhost:5555/tool/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="tool" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/paper/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/paper/content</id><content type="html" xml:base="http://localhost:5555/paper/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="paper" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/learning/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/learning/content</id><content type="html" xml:base="http://localhost:5555/learning/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="learning" /><summary type="html">Content</summary></entry><entry><title type="html">Markov</title><link href="http://localhost:5555/content/2023-08-23-Markov.html" rel="alternate" type="text/html" title="Markov" /><published>2023-08-23T00:00:00+08:00</published><updated>2023-08-23T00:00:00+08:00</updated><id>http://localhost:5555/content/Markov</id><content type="html" xml:base="http://localhost:5555/content/2023-08-23-Markov.html">&lt;blockquote&gt;
   &lt;p&gt;/language Chinese&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1281,4 +1326,4 @@ C &amp;amp; 0.2 &amp;amp; 0.3 &amp;amp; 0.5 \\\\
 
 &lt;p&gt;好的，如果你以后有任何其他问题或需要深入探讨某个话题，请随时告诉我。感谢你选择Mr. Ranedeer来帮助你学习马尔科夫链和相关内容。祝你学习愉快，并取得更多的进步！🦌📘🌟&lt;/p&gt;
 
-&lt;p&gt;如果你需要其他帮助或有其他话题想要探讨，也请随时告诉我！&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="learning" /><summary type="html">/language Chinese</summary></entry></feed>
+&lt;p&gt;如果你需要其他帮助或有其他话题想要探讨，也请随时告诉我！&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry></feed>

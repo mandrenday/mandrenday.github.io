@@ -14,6 +14,22 @@
             {% endif %}
                 <a href="{{site.baseurl}}/">
                     {{ site.title | escape }}
+
+<li class="chapter" data-level="1.2" data-path="{{site.baseurl}}/paper/">
+    <a href="{{site.baseurl}}/paper/2023-08-24-content.html">
+        Paper
+    </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="{{site.baseurl}}/learning/">
+    <a href="{{site.baseurl}}/learning/2023-08-24-content.html">
+        Learning
+    </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="{{site.baseurl}}/tool/">
+    <a href="{{site.baseurl}}/tool/2023-08-24-content.html">
+        Tool
+    </a>
+</li>
                 </a>
             </li>
 
@@ -23,20 +39,12 @@
 {% endcomment %}
 {% assign unique_categories = "" | split: "" %}
 
-{% for post in site.posts %}
-  {% unless unique_categories contains post.category %}
-    {% assign unique_categories = unique_categories | push: post.category %}
-  {% endunless %}
-{% endfor %}
+
 
 {% for category in unique_categories %}
   <li><span class="category-title" onclick="toggleCategory('{{ category }}')">{{ category }}</span>
     <ul id="{{ category }}" class="category-posts">
-      {% for post in site.posts %}
-        {% if post.category == category %}
-          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-        {% endif %}
-      {% endfor %}
+      
     </ul>
   </li>
 {% endfor %}
