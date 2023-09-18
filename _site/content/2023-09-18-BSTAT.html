@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>BSTAT · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Build Jekyll site with the GitBook style.
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mingkai Qiu"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+
+<link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+
+
+
+            <link rel="prev" href="/tool/2023-08-24-content.html" />
+        
+
+        
+            <link rel="next" href="/content/2023-09-18-Node2vec.html" />
+        
+    </head>
+    <body>
+        <div class="book"><div class="book-summary">
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="">
+            
+                <a href="/">
+                    Mandren&#39;s Blog
+
+<li class="chapter" data-level="1.2" data-path="/paper/">
+    <a href="/paper/2023-08-24-content.html">
+        Paper
+    </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="/learning/">
+    <a href="/learning/2023-08-24-content.html">
+        Learning
+    </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="/tool/">
+    <a href="/tool/2023-08-24-content.html">
+        Tool
+    </a>
+</li>
+                </a>
+            </li>
+
+            
+
+
+
+
+
+
+</ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >BSTAT</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/content/BSTAT">BSTAT</h1>
+                    
+
+                    <h1 id="bidirectional-spatial-temporal-adaptive-transformer-for-urban-traffic-flow-forecasting">Bidirectional Spatial-Temporal Adaptive Transformer for Urban Traffic Flow Forecasting</h1>
+<h2 id="-ieee-transactions-on-neural-networks-and-learning-systems-2022">—— IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022</h2>
+
+<h2 id="特点">特点</h2>
+<p>论文利用transformer来建立时间和空间关系，而且对于路网的空间结构利用，采用图来建模，但是没有考虑利用图卷积来基于路网结构更新特征。</p>
+
+<h2 id="问题定义">问题定义</h2>
+<p>对于N个传感器的交通流预测问题，作者考虑现有时间数据$X^P = (X_{H+1}, X_{H+2}, …, X_{H+P})\in R^{P\times N\times d}$，历史数据 $X^H = (X_{1}, X_{2}, …, X_{H})\in R^{H\times N\times d}$， 其中d为交通状况的特征数，比如只预测交通流，则d=1。基于历史和当前交通流数据，目标是要预测将来时间$X^F = (X_{H+P+1}, X_{H+P+2}, …, X_{H+P+F})$</p>
+
+<p>历史数据知识起到正则化的作用，所以在测试的时候，仅基于当前交通流序列进行预测，不使用历史交通流数据。</p>
+
+<h2 id="网络结构">网络结构</h2>
+<p>论文的网络结构如下图所示，该模型的输入数据一共包括三个：交通网络（空间情景）、时间特征（时间情景）以及当前交通流（输入特征），经过预处理和特征嵌入后，将嵌入数据输入编码器。编码器由多个相同编码层组成，每层包括一个空间自适应Transformer，时间自适应Transformer以及一个DHM模块。编码器通过DHM循环变换计算实现任务自适应计算，<strong>动态控制计算步数</strong>。在此基础上，将空间和时间特征进行融合，以获取不同时间点交通节点之间的相互依赖关系。Bi-SATA包含两个解码器，预测解码器与编码器具有相同的结构，用于未来交通状况预测，回忆解码器的结构更为简单，不包含DHM，可以作为正则器来防止预测解码器出现过拟合现象。在编码器和解码器之间，作者设计了交叉注意力模块，它模拟了每个未来(过去)时间步长和所有当前时间步长之间的直接关系。这种设计切断不同时间步之间的联系，这对缓解交通预测问题中误差传播问题具有潜在的效果。</p>
+
+<p><img src="/images/BSTAT-network.png" alt="网络结构" title="Magic Gardens" /></p>
+
+<h2 id="结构介绍">结构介绍</h2>
+<h3 id="输入">输入</h3>
+<p>网络的输入包括三个部分，分别是空间特征、时间特征以及交通特征。其中，空间特征通过构建路网的图结构，以点与点之间的欧式距离建立邻接矩阵，然后通过<a href="/content/2023-09-24-Node2vec.html">node2vec</a>算法将图节点转换为特征编码，再经过两层的卷积层得到空间特征。表示为$SE\in R^{N\times D}$。</p>
+
+<p>时间特征考虑两个：在一天中位于哪个小时（这里是划分为多个时段，以时段索引表示）以及在一周中位于哪一天，将这两个分别表示为one-hot 编码后进行concat，得到特征编码，再经过两层的卷积层得到时间特征。表示为TE。</p>
+
+<p>交通特征：当前交通流序列$X^P\in R^{P\times N\times d}$，同样使用两层全连接网络使该序列的维度与空间嵌入和时间嵌入保持一致。</p>
+
+<p>最终的输入就是三个特征concat得到的特征。</p>
+
+<h2 id="时空自适应transformer">时空自适应transformer</h2>
+<p>结构如下图所示。作者设计了一个空间Transformer和时间Transformer用于处理空间输入和时间输入。在空间（时间）输入被送入空间（时间）Transformer之前，位置嵌入和循环嵌入被整合在一起以提供情景信息（例如传感器密度、时间步、循环步）。具体来说，Transformer由多头注意力机制、带有残差操作的层归一化以及转移函数组成。在经过空间和时间Transformer处理后，进一步设计了一个融合模块以建模空间序列和时间序列的关系。</p>
+
+<p><img src="/images/BSTAT-SATA.png" alt="网络结构" title="BSTAT-SATA" /></p>
+
+<p><strong>位置和循环嵌入</strong> 其中的位置表示序列中每一个点的位置，循环嵌入则是作者引入一个DHM用于控制transformer的循环层数，这个循环嵌入则是当前循环层数的嵌入表示。其中sin是未知，cos是循环层数。</p>
+
+<p><img src="/images/BSTAT-position-and-recurrrent-embedding.png" alt="嵌入计算" title="BSTAT-position and recurrrent embedding" /></p>
+
+<p><strong>时空自适应transformer</strong> 时间和空间transformer的结构类似，但是存在两点差异：1、位置编码不一样，在时间transformer中，位置编码为交通流序列的时间步，空间transformer则是点在序列的位置索引；2、transformer的自注意力维数不同，时间transformer中$X^P\in R^{N\times P\times D}$,而在空间transformer中，则是$X^P\in R^{P\times N\times D}$，其中第一个就是batch的维数，这里就是在考虑一个维度的时候，将另一个维度表示为batch，虽然论文里没说，但是这里猜测应该是在时空两个transformer，就是原始的交通流序列加上时间，空间特征联合得到的输入特征，对于时间的就不变，对于空间的就前面两个维度互换作为输入。</p>
+
+<p><strong>融合模块</strong> 时空transformer分别用于捕获交通流的时间和空间依赖，但是由于交通流中的时空特性是紧密相关的，所以基于两个transformer分别得到时间和空间的输出特征后，还对两部分特征进行融合，得到时空特征。</p>
+
+<p><img src="/images/BSTAT-entangle.png" alt="融合模块" title="BSTAT-entangle" /></p>
+
+<h2 id="动态停止模块dhm">动态停止模块（DHM）</h2>
+<p>在时空transformer中，作者会堆叠多个transformer，为了能够控制参数量以及实现动态训练，首先作者使用RNN的循环归纳偏差（归纳偏差可以理解为一种原则，这里RNN的循环归纳偏差就是指RNN对于不同时间步的使用共享参数，保证不管时间步怎么变，参数都是一样的），然后为了实现动态计算，设计了一个DHM用于控制循环步数。</p>
+
+<p>由于transformer特定循环的状态输出包括任务的时空信息，所以DHM以transformer的状态特征为输入，以时间transformer为例，先计算暂停概率：$p^m = \sigma(H^{m}W_h + b_n)$这里会得到p个当前序列的停止单元，对于每一个序列，会独立计算停止概率（这里不是很清楚，transformer在计算的过程中不就是对序列中所有点进行自注意力计算，如果停止了某一个序列的计算，那其他的还怎么计算，还是说每次就把停止了计算的重新替换成停止前的）。作者计算过去所有循环时间步的累计停止概率，来确定停止依据，其中M表示最大步数：</p>
+
+<p><img src="/images/BSTAT-stop.png" alt="停止依据" title="BSTAT-stop" /></p>
+
+<p>则可以得到每个序列的实际计算步长和剩余值：</p>
+
+<p><img src="/images/BSTAT-DHM.png" alt="步长计算" title="BSTAT-DHM" /></p>
+
+<p>最后对不同步长的特征根据暂停概率进行加权得到最后的特征表示.根据这个公式可以猜测，对于上面的疑问，可能是就在计算停止依据时所有的一起计算，只有所有的停止了才停止，然后对于每个序列的特征在最后加权的时候就只考虑到各自的步长的。</p>
+
+<p><img src="/images/BSTAT-DHM-weight.png" alt="特征加权" title="BSTAT-DHM-weight" /></p>
+
+<h2 id="交互注意力模块">交互注意力模块</h2>
+
+<p>与通用的在预测未来多个时间步中，采用先预测T+1,然后联合T+1的预测，预测T+2这样逐步传递预测的过程不同，考虑到这种方式容易出现错误传播，所以作者将未来时间步进行解耦，直接建模每一个未来(过去)时间步和当前所有时间步的关系，由于未来的特征是需要预测，没有特征的，所以在建模的时候三个输入就只考虑了时间和空间两个表征,以给定未来时间步和当前时间步为例，公式如下，D为特征维度。最终的输出$H_D[F_i,s_i,:]\in R^{F\times N\times D}$就是根据交叉注意力模块，根据现有时间序列的特征，得到未来时间序列的特征的表达。同样的，过去时间表达也是如此。</p>
+
+<p>所以从这里就可以看出来，尽管用到了过去的，且过去的交通流特征是已知的，但是其实在预测的时候只用到了现在的特征，未来和过去的，都是用了现在的特征去经过时空注意力来构建特征表达的。</p>
+
+<p><img src="/images/BSTAT-SPCross.png" alt="交叉注意力" title="BSTAT-SPCross" /></p>
+
+<h2 id="解码器和损失">解码器和损失</h2>
+
+<p><strong>预测解码器</strong> 如上面网络结构图所示，在预测未来的时候，解码器的结构和编码器是一样的，对上面得到的未来特征表达进行解码得到预测。论文中提到“未来时间步的相关性被隔离，且每个未来时间步独立地与当前所有时间步相关，这样可以使误差累积传播得到缓解”，这个我理解就是体现在交互注意力模块中得到未来每一步的表达这个过程，在解码器中其实没有表现。</p>
+
+<p>#回忆解码器** 这个是用于基于现在的对过去进行预测的。这是考虑到只注意现在与未来的，则在训练的过程中，是使用历史预测当前持续时间的，并在时间不重叠的未来数据上进行测试，这种不一致性容易导致训练过程中出现过拟合，同时，过往的信息其实在未来预测中是起着重要作用的。因此，采用一个回忆编码器来基于现在的预测未来的。如上面的网络结构可以看到，在回忆编码器，为了缓解预测解码器的过拟合问题，并且避免干扰预测解码器的预测任务，所以回忆解码器没有采用DHM，就只有指定层数的transformer。</p>
+
+<p><strong>损失函数</strong> 损失包括三种，一个是对未来的预测损失以及历史的重构损失，这两个就是采用MSE，然后还有一个对DHM的惩罚损失，希望用于平衡计算量和模型效率，也就是希望层数能够尽可能的少，所以损失采用上面的剩余值R(i)。（这个就是层数少，就表示每一次的剩余值小，也就是最小化剩余值）</p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+                        <a href="/tool/2023-08-24-content.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Learning Content">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/content/2023-09-18-Node2vec.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Node2vec">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "Node2vec",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/content/2023-09-18-Node2vec.md",
+            "ref": "_posts/content/2023-09-18-Node2vec.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            }
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Mandren's Blog",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_posts/content/2023-09-18-BSTAT.md",
+        "mtime": "2023-09-18 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2023-09-18 21:47:36 +0800"
+    },
+    "basePath": "",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+
+</body>
+</html>

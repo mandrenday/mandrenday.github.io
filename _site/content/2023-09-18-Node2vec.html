@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Learning Content · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Node2vec · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Build Jekyll site with the GitBook style.
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mingkai Qiu"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
@@ -23,11 +23,9 @@
 
 
 
-            <link rel="prev" href="/content/2023-08-24-Label-Propagation.html" />
+            <link rel="prev" href="/content/2023-09-18-BSTAT.html" />
         
 
-        
-            <link rel="next" href="/paper/2023-08-24-content.html" />
         
     </head>
     <body>
@@ -80,7 +78,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Learning Content</a>
+                            <a href="." >Node2vec</a>
                         
                     </h1>
                 </div>
@@ -93,34 +91,75 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/learning/content">Learning Content</h1>
+                        <h1 id="/content/Node2vec">Node2vec</h1>
                     
 
-                    <h1 id="content"><strong>Content</strong></h1>
+                    <h1 id="node2vec">node2vec</h1>
+<h2 id="介绍node2vec算法">介绍node2vec算法</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="/content/2023-08-23-Markov.html">Markov</a></td>
-      <td>learning from Chatgpt</td>
-    </tr>
-    <tr>
-      <td><a href="/content/2023-08-24-Label-Propagation.html">Label Propagation</a></td>
-      <td>learning from Chatgpt</td>
-    </tr>
-    <tr>
-      <td><a href="/content/2023-09-18-Node2vec.html">Node2vec</a></td>
-      <td>learning from Chatgpt</td>
-    </tr>
-  </tbody>
-</table>
+<p><code class="language-plaintext highlighter-rouge">node2vec</code> 是一种用于生成网络图中节点的连续向量表示的算法。该算法的核心思想是通过随机游走捕捉网络的结构特性，并使用 Skip-Gram 架构从随机游走中学习节点表示。以下是该算法的基本思想：</p>
 
+<ol>
+  <li>
+    <p><strong>随机游走</strong>：从每个节点开始，进行多次随机游走，每次游走产生一个节点序列。</p>
+  </li>
+  <li>
+    <p><strong>优化随机游走</strong>：不同于简单的随机游走，<code class="language-plaintext highlighter-rouge">node2vec</code> 在随机游走过程中引入了两个参数：ppp 和 qqq，它们控制游走的搜索策略，以便更好地捕捉网络的社区结构（局部同质性）和结构当中的桥（结构的多样性）。</p>
+
+    <ul>
+      <li>$p$：返回参数。它控制游走者返回上一节点的倾向。如果 $p$ 很高，游走者更倾向于探索新的节点而不是返回。</li>
+      <li>$q$：外向参数。它控制游走者远离当前节点的倾向。如果 $q$ 很高，游走者更可能留在当前的社区；如果 $q$ 很低，他们会跳到其他社区。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>学习节点表示</strong>：使用随机游走生成的节点序列，通过 Skip-Gram 架构学习每个节点的向量表示。这一部分与 Word2Vec 中的 Skip-Gram 方法类似，其中“单词”是图中的节点，而“上下文”是随机游走过程中的邻近节点。</p>
+  </li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">node2vec</code> 的主要优点是它可以捕捉网络的复杂结构特性，从而为各种下游任务（如节点分类、链接预测和节点聚类）生成有意义的节点表示。</p>
+
+<p>如果你对算法的更多细节或实现感兴趣，我可以为你提供更多的信息。</p>
+
+<h2 id="进行node2vec需要提供什么信息">进行node2vec需要提供什么信息</h2>
+
+<p>要进行 <code class="language-plaintext highlighter-rouge">node2vec</code>，你需要提供以下基本信息：</p>
+
+<ol>
+  <li>
+    <p><strong>网络图</strong>：这是算法的主要输入，通常表示为一个无向图或有向图。图中的每个节点代表一个实体，而边代表实体之间的关系。</p>
+  </li>
+  <li>
+    <p><strong>随机游走的参数</strong>：</p>
+
+    <ul>
+      <li><strong>游走长度</strong>：每次随机游走应该走多少步。</li>
+      <li><strong>游走次数</strong>：从每个节点开始进行多少次随机游走。</li>
+      <li><strong>返回参数 $p$</strong>：控制随机游走时返回到上一个节点的倾向。</li>
+      <li><strong>外向参数 $q$</strong>：控制随机游走时探索新节点的倾向。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Embedding 参数</strong>：</p>
+
+    <ul>
+      <li><strong>维度</strong>：每个节点的向量表示的大小。</li>
+      <li><strong>窗口大小</strong>：在 Skip-Gram 架构中，当从随机游走生成的节点序列中学习节点表示时，应该考虑多少邻近节点作为上下文。</li>
+      <li><strong>学习率</strong>：模型训练的步长。</li>
+      <li><strong>最小样本数</strong>：最小样本数用于过滤那些随机游走次数少于此数值的节点。</li>
+      <li><strong>负采样</strong>：在优化过程中，用于生成负样本的数量。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>其他可能的参数</strong>：这取决于你使用的特定实现和库。例如，你可能会提供以下参数：</p>
+
+    <ul>
+      <li><strong>工作进程数量</strong>：用于并行处理的 CPU 核心数量。</li>
+      <li><strong>迭代次数</strong>：Skip-Gram 架构的训练迭代次数。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>有了这些信息，你就可以使用 <code class="language-plaintext highlighter-rouge">node2vec</code> 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -149,15 +188,11 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/content/2023-08-24-Label-Propagation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Label Propagation">
+                        <a href="/content/2023-09-18-BSTAT.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: BSTAT">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
-                    
-                        <a href="/paper/2023-08-24-content.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Learning Content">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
                     
                 </div>
             </div>
@@ -170,15 +205,6 @@ MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "Learning Content",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/paper/2023-08-24-content.md",
-            "ref": "_posts/paper/2023-08-24-content.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -265,8 +291,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/learning/2023-08-24-content.md",
-        "mtime": "2023-08-24 00:00:00 +0800",
+        "path": "_posts/content/2023-09-18-Node2vec.md",
+        "mtime": "2023-09-18 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
