@@ -1,5 +1,373 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2023-09-18T21:47:36+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren’s Blog</title><subtitle>Build Jekyll site with the GitBook style.
-</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">Node2vec</title><link href="http://localhost:5555/content/2023-09-18-Node2vec.html" rel="alternate" type="text/html" title="Node2vec" /><published>2023-09-18T00:00:00+08:00</published><updated>2023-09-18T00:00:00+08:00</updated><id>http://localhost:5555/content/Node2vec</id><content type="html" xml:base="http://localhost:5555/content/2023-09-18-Node2vec.html">&lt;h1 id=&quot;node2vec&quot;&gt;node2vec&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2023-09-20T11:43:21+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren’s Blog</title><subtitle>Build Jekyll site with the GitBook style.
+</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">GCN</title><link href="http://localhost:5555/content/2023-09-19-GCN.html" rel="alternate" type="text/html" title="GCN" /><published>2023-09-19T00:00:00+08:00</published><updated>2023-09-19T00:00:00+08:00</updated><id>http://localhost:5555/content/GCN</id><content type="html" xml:base="http://localhost:5555/content/2023-09-19-GCN.html">&lt;h1 id=&quot;gcn&quot;&gt;GCN&lt;/h1&gt;
+
+&lt;h2 id=&quot;gnn&quot;&gt;GNN&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;本文部分内容参考自：&lt;a href=&quot;http://xtf615.com/2019/02/24/gcn/&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;图网络可以理解成给定网络的拓扑结构，包括点和边，输入点和边的特征（边可能没有特征，只有一个权重），得到关于每一个点的输出作为点的预测，而损失，就是定义为点的预测值和实际值的一个比如交叉熵损失或者是MSE。&lt;/p&gt;
+
+&lt;p&gt;上面的解释是一种专注于节点的图（node-focused），如果是专注于图（graph-focused），则是在图中新增加一个节点，表示一个全图的节点，然后只预测这个点的值与图的实际值进行一个损失计算。&lt;/p&gt;
+
+&lt;p&gt;图中涉及到的参数定义如下,在图中，一般用$l$表示特征向量，而$x$表示状态向量&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/GCN-notation.png&quot; alt=&quot;参数定义&quot; title=&quot;GCN-notation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;节点更新&lt;/strong&gt;  GNN中，点之间通过交换信息来更新自己的节点状态，也就是节点的状态根据点自身的特征，邻居节点的特征来进行更新，直到达到一个稳定值。&lt;/p&gt;
+
+&lt;p&gt;因此，参数更新的过程，就是对图网络的特征进行更新后，不断迭代到稳定状态后，再计算损失，进行参数更新。&lt;/p&gt;
+
+&lt;p&gt;对于一个节点，其状态向量$x_n\in R^s$以及输出$o_n$的更新方式为：&lt;/p&gt;
+
+&lt;p&gt;$x_n = f_A(l_n,l_{co[n]},x_{ne[n]},l_{ne[n]})$&lt;/p&gt;
+
+&lt;p&gt;$o_n = g_A(x_n, l_n)$
+也就是，点的状态向量与自身特征，连接边的特征，连接点的特征以及状态向量相关（此处假设边没有状态向量，有特征向量，如果没有特征向量，则只有权重，体现在邻接矩阵中），然后再根据点的状态向量，得到输出结果。&lt;/p&gt;
+
+&lt;p&gt;节点更新及模型优化步骤如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;聚合邻居信息：对于每一个节点，它会从其邻居节点收集信息。这通常是通过一种称为“聚合函数”的函数来实现的。常见的聚合函数包括均值、和、最大值或者concat等；&lt;/li&gt;
+  &lt;li&gt;更新节点表示：根据收集到的邻居信息以及当前节点的信息，更新该节点的表示。这通常是通过一种称为“更新函数”的函数来实现的。一个常见的更新函数是将聚合得到的邻居信息与当前节点信息连接起来，并通过一个全连接层或其他非线性激活函数进行处理。&lt;/li&gt;
+  &lt;li&gt;重复迭代：重复上面的过程中，迭代T次后得到接近不动解：$x(T) \approx x$， $T$一般是一个超参数&lt;/li&gt;
+  &lt;li&gt;梯度计算：计算参数权重的梯度&lt;/li&gt;
+  &lt;li&gt;权重更新：使用该梯度更新权重&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;具体实现&lt;/strong&gt;
+对于上面状态向量的更新，在编程时可以表示为如下：&lt;/p&gt;
+
+&lt;p&gt;$x_n = \sum_{u\in ne[n]}h_A(l_n, l_{(n,u)},x_u,l_u), n\in N$&lt;/p&gt;
+
+&lt;p&gt;这里也就是把点的特征向量、边的特征向量、邻居节点的特征向量和状态向量concat起来（或者是均值、和、最大值等），然后输入一个MLP（也就是$h_A$函数）中就可以得到更新后的状态向量&lt;/p&gt;
+
+&lt;h2 id=&quot;gcn-1&quot;&gt;GCN&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;GCN与拉普拉斯矩阵&lt;/strong&gt; 图卷积网络（GCN）是一种深度学习模型，用于处理图数据。为了在图上执行卷积，GCN利用了图的拉普拉斯矩阵（Laplacian Matrix）的特性。拉普拉斯矩阵描述了图中节点之间的关系，是许多图论算法和图信号处理方法的基础。&lt;/p&gt;
+
+&lt;p&gt;给定一个无向图 $G = (V, E)$ ，其中 $V$ 是节点集， $E$ 是边集，我们可以定义图的邻接矩阵 $A$ 和度矩阵 $D$。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;邻接矩阵 $A$&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;$A$ 是一个 $V\times V$ 的矩阵。&lt;/li&gt;
+      &lt;li&gt;如果节点 $i$ 和节点 $j$ 之间存在边，则 $A_{ij} = 1$；否则 $A_{ij} = 0$。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;度矩阵 $D$&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;$D$ 是一个对角矩阵，其中对角线上的元素 $D_{ii}$ 表示节点 $i$ 的度（与它相连的边的数量）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;拉普拉斯矩阵 $L$ 定义为：$L = D - A$&lt;/p&gt;
+
+&lt;p&gt;GCN 中经常使用的是归一化的拉普拉斯矩阵，定义为：
+$\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
+其中 $I$ 是单位矩阵。&lt;/p&gt;
+
+&lt;p&gt;该归一化有助于使得传播过程更为稳定。在 GCN 中，特征传播过程可以简化为应用归一化的邻接矩阵到节点特征上。&lt;/p&gt;
+
+&lt;p&gt;拉普拉斯矩阵是一个半正定对称矩阵，包含如下性质：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;对角线上的元素代表每个节点的度。&lt;/li&gt;
+  &lt;li&gt;一定具有n个线性无关的特征向量（n是Graph节点数）&lt;/li&gt;
+  &lt;li&gt;半正定矩阵特征值一定非负&lt;/li&gt;
+  &lt;li&gt;对称矩阵特征向量相互正交，即所有特征向量构成的矩阵为正交矩阵&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在图卷积网络（GCN）中，拉普拉斯矩阵是关键的组成部分，因为它描述了图中节点之间的连接关系，这有助于特征在图上的传播。&lt;/p&gt;
+
+&lt;h3 id=&quot;gcn1代&quot;&gt;GCN1代&lt;/h3&gt;
+
+&lt;p&gt;传统的傅里叶变换如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/GCN-fourier.png&quot; alt=&quot;傅里叶变换&quot; title=&quot;GCN-fourier&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在GCN上，利用拉普拉斯矩阵，设$\Phi_k$是拉普拉斯矩阵的特征向量，$\lambda_k$是特征值，在GCN中，与传统傅里叶变换做了下面的对应：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/GCN-fourier1.png&quot; alt=&quot;傅里叶变换对应&quot; title=&quot;GCN-fourier1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此时图上的傅里叶变换的矩阵形式则变成$\hat{f} = \Phi^{T}f$。因为$\Phi$是拉普拉斯矩阵的特征向量矩阵，这个矩阵是一个正交矩阵，也就是逆等于转置($\Phi^T \Phi = I$)，所以有$f = \Phi \hat{f}$，也就是逆变换时，直接左乘$\Phi$即可&lt;/p&gt;
+
+&lt;p&gt;考虑卷积定理：函数卷积的傅里叶变换是函数傅里叶变换的乘积公式如下：&lt;/p&gt;
+
+&lt;p&gt;$f*g = F^{-1}{F{f}\cdot F{g}}$&lt;/p&gt;
+
+&lt;p&gt;也就是时域上的卷积等于先傅里叶变换转化为频域后进行乘积，再逆傅里叶变换的结果。
+则此时在图上的卷积就变成：$(f*h)_{g} = \Phi diag[\hat{h}(\lambda_1),\dots,\hat{h}(\lambda_1)]\Phi^Tf$,这里左乘$\Phi$就是傅里叶逆变换，第二个的diag则是为了进行对应位置元素的乘积，将卷积核$h$的傅里叶变换$\Phi^T h\in R^{N\times 1}$（图的卷积核就是一维，大小为图节点数目的卷积核）转换成对角矩阵的形式（这里也是将特征向量表示为特征值的函数），后面两个则是函数$f$的傅里叶变换。&lt;/p&gt;
+
+&lt;p&gt;这里把卷积核的傅里叶变换转换成对角矩阵的形式，是因为这样就是把一维卷积核的傅里叶变换，直接变成二维卷积核，也就是把傅里叶变换后的结果直接作为参数向量，让网络进行学习。&lt;/p&gt;
+
+&lt;p&gt;这个表达形式就是第一代的GCN，这里存在的问题是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;复杂度太高，需要对拉普拉斯矩阵进行谱分解求解特征向量$\Phi$，这个在图很大的时候复杂度较高，为$O(n^2)$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;卷积核的参数为n，当图较大的时候，卷积核很大&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;gcn2代&quot;&gt;GCN2代&lt;/h3&gt;
+
+&lt;p&gt;卷积核$diag[\hat{h}(\lambda_1),\dots,\hat{h}(\lambda_1)]$是关于特征值的函数，可以写成$g_{\theta}(\Lambda)$，然后把这个定义成k阶多项式的形式：$g_{\theta}(\Lambda)\approx \sum_{k=0}^K{\theta_k \Lambda^k}$,则原始的卷积操作可以变成：&lt;/p&gt;
+
+&lt;p&gt;$g_{\theta}*x\approx \Phi \sum_{k=0}^K \theta_{k} \Lambda^k\Phi^T x$&lt;/p&gt;
+
+&lt;p&gt;$=\sum_{k=0}^K \theta_{k}(\Phi \Lambda^k \Phi^T)x$&lt;/p&gt;
+
+&lt;p&gt;$=\sum_{k=0}^K \theta_{k}(\Phi \Lambda \Phi^T)^kx$&lt;/p&gt;
+
+&lt;p&gt;=$=\sum_{k=0}^K\theta_kL^k x$&lt;/p&gt;
+
+&lt;p&gt;这里就不需要进行特征分解，只需要对拉普拉斯矩阵进行变换，实现将$L^k$计算出来，则可以在前行传播的时候使用，复杂度为$O(Kn^2)$。&lt;/p&gt;
+
+&lt;p&gt;同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息&lt;/p&gt;
+
+&lt;p&gt;同时，考虑到&lt;strong&gt;任何多项式都可以使用切比雪夫展开式近似（类比函数可以利用泰勒展开进行近似）&lt;/strong&gt;，则可以引入切比雪夫多项式的$K$阶截断来获得对$L^K$的近似，进而获得对$g_{\theta}(\Lambda)的近似$：&lt;/p&gt;
+
+\[g_{\theta^{\prime}}(\Lambda) \approx\sum_{k=0}^K{\theta^{\prime}_{k}T_{k}(\tilde{\Lambda})}\]
+
+&lt;p&gt;其中$\tilde{\Lambda} = \frac{2}{\lambda_{max}}\Lambda - I_n$，是拉普拉斯矩阵$L$的最大值(即谱半径)缩放后的特征向量矩阵（也就是最大值缩放为1，防止连乘爆炸），$\theta^{\prime} \in R^{K}$是一个切比雪夫向量，$\theta^{\prime}_{k}$是第k维分量。&lt;/p&gt;
+
+&lt;p&gt;则可以得到：\(g_{\theta}*x\approx \sum_{k=0}^K \theta_{k}^{\prime}(\Phi T_K(\tilde{\Lambda})\Phi^T)^kx = \sum_{k=0}^K \theta^{\prime}_{k}T_{k}(\tilde{L})x\)&lt;/p&gt;
+
+&lt;p&gt;其中$\tilde{L} = \frac{2}{\lambda_{max}}L-I_n$.&lt;/p&gt;
+
+&lt;p&gt;因为切比雪夫多项式可以用递归来定义:$T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x), T_{0}(x) = 1, T_1(x) = x$，因此卷积的计算就变成可以迭代计算的公式，用于替换原始矩阵的k次方计算。&lt;/p&gt;
+
+&lt;h3 id=&quot;gcn3代&quot;&gt;GCN3代&lt;/h3&gt;
+&lt;p&gt;GCN3代在2代的基础上，进行了进一步简化：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核&lt;/li&gt;
+  &lt;li&gt;深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可&lt;/li&gt;
+  &lt;li&gt;加入参数的约束，如: $\lambda_{max}\approx2$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了&lt;/p&gt;
+
+&lt;p&gt;进一步假设\(\theta^{\prime}_0 = -\theta^{\prime}_1\)，则此时只有一个参数\(\theta\): \(g_{\theta}^{\prime}*x = \theta(I_n+D^{-1/2}AD^{-1/2})x\)。&lt;/p&gt;
+
+&lt;p&gt;同时，考虑到$I_n+D^{-1/2}AD^{-1/2}$的谱半径（也就是最大特征值）在[0,2]太大，所以进行重归一化，变成:$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}$，其中$\tilde{A} = A+I_n$，也就是邻接矩阵加上自连接，\(\tilde{D}_{i,j} = \sum_{j} \tilde{A}_{i,j}\)，也就是变换后的连接矩阵的度矩阵（点的度为所连接的点的数目）。&lt;/p&gt;
+
+&lt;p&gt;那么最后的形式就是：$g_{\theta}^{\prime}*x = \theta(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2})x$。&lt;/p&gt;
+
+&lt;p&gt;考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）&lt;/p&gt;
+
+&lt;p&gt;写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)&lt;/p&gt;
+
+&lt;h2 id=&quot;gcn的数学形式&quot;&gt;GCN的数学形式&lt;/h2&gt;
+&lt;p&gt;图卷积网络（GCN）的数学形式旨在将节点的特征和图的结构信息结合起来，以获得每个节点的新的特征表示。以下是GCN的基本数学形式：&lt;/p&gt;
+
+&lt;p&gt;考虑一个图 $G$，其邻接矩阵为 $A$，并附加一个单位矩阵 $I$ 以考虑自环。因此，修正后的邻接矩阵为 $\tilde{A} = A + I$。&lt;/p&gt;
+
+&lt;p&gt;对于每个节点，我们还有一个特征矩阵 $X$，其中第 $i$ 行是节点 $i$ 的特征向量。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;计算度矩阵&lt;/strong&gt;:
+首先，我们计算图 $G$ 的度矩阵 $\tilde{D}$，其中 $\tilde{D}_{ii}$ 是节点 $i$ 的度（与它相连的边的数量）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;特征传播&lt;/strong&gt;:
+GCN的关键步骤是特征传播，这是通过以下公式实现的：
+$H^{(l+1)} = \sigma\left( \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(l)} A^{(l)} \right)$
+其中：
+    &lt;ul&gt;
+      &lt;li&gt;$H^{(l)}$ 是第 $l$ 层的节点特征矩阵。&lt;/li&gt;
+      &lt;li&gt;$H^{(0)}$ 是初始的节点特征矩阵，即 $X$。&lt;/li&gt;
+      &lt;li&gt;$A^{(l)}$ 是第 $l$ 层的权重矩阵，需要在训练过程中学习。&lt;/li&gt;
+      &lt;li&gt;$\sigma$ 是一个非线性激活函数，例如ReLU。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;多层传播&lt;/strong&gt;:
+实际的GCN模型可能包含多个这样的层，每一层都通过上述公式进行特征传播。这意味着每个节点在每一层都会聚合其邻居的信息。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;输出&lt;/strong&gt;:
+对于节点分类任务，最后一层的输出 $H^{(L)}$ 可以传递给一个分类器进行处理。对于整个图的分类或回归任务，可以使用全局池化策略（如平均、最大池化等）来从最后一层的所有节点特征中获取单个图的表示。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;GCN的特征传播公式可以分为以下几个步骤进行理解：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;邻接矩阵的归一化&lt;/strong&gt;:
+$\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$
+这一步确保了特征在邻居之间的传播是稳定的，特别是在聚合多个邻居的信息时。归一化后的邻接矩阵能够使得每个节点的贡献与其度数成反比。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;特征聚合&lt;/strong&gt;:
+乘以 $H^{(l)}$ 是特征的聚合步骤，它考虑了每个节点及其邻居的特征。简单地说，这一步骤将一个节点及其邻居的特征聚合到该节点上。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;线性转换&lt;/strong&gt;:
+最后，乘以权重矩阵 $A^{(l)}$ 是一个线性转换，它可以将聚合后的特征映射到新的特征空间。这允许模型学习更复杂和抽象的特征表示。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;非线性激活&lt;/strong&gt;:
+函数 $\sigma$ 是一个非线性激活函数（如ReLU），它为模型引入了非线性，使模型能够学习更复杂的函数。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gcn的归一化&quot;&gt;GCN的归一化&lt;/h2&gt;
+&lt;p&gt;可以看到GCN中使用的归一化为$\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$，而一般的拉普拉斯矩阵归一化为：$I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
+这两种表示实际上源于相同的思想，但在实践中有些差异。这两种形式都试图通过归一化来稳定特征的传播，但它们的应用和解释略有不同。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;谱域的解释&lt;/strong&gt;:
+ 归一化的拉普拉斯矩阵 $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$ 起源于图信号处理的谱域方法。在谱图卷积的背景下，这种归一化有助于确保特征值位于[0, 2]的范围内，从而使得谱滤波变得更加稳定。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;空间域的解释&lt;/strong&gt;:
+ 在GCN的原始论文中，作者采用了空间域的方法，而不是谱域的方法。他们的目标是直接模拟局部邻域内的信息聚合。为了实现这一点，他们使用了修正的邻接矩阵 $\tilde{A} = A + I$（加入自环）和相应的度矩阵 $\tilde{D}$。然后，他们使用了归一化的形式 $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$ 来确保信息在邻居之间传播时的稳定性。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;基于空间域的解释中，归一化的目的是确保节点特征的传播稳定并防止梯度消失或爆炸。我们可以从直观和数学两个方面来理解这种归一化的效果。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;直观解释&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;当我们考虑一个节点及其邻居时，我们希望这些节点的贡献是均衡的，而不是由于某些节点的度数特别高而被主导。换句话说，一个与许多其他节点相连的节点不应该对聚合结果产生过大的影响。&lt;/li&gt;
+      &lt;li&gt;通过归一化，我们确保每个节点的贡献与其度数成反比。这意味着度数高的节点在聚合过程中的权重会减少，而度数低的节点的权重会增加，从而使得聚合过程更加均衡。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;数学解释&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;考虑邻接矩阵 $A$ 的一个简单操作，即与特征矩阵 $H$ 的矩阵乘法，即 $AH$。这实际上是将每个节点的特征与其邻居相加。但是，如果一个节点有很多邻居，那么它的特征值可能会变得非常大。&lt;/li&gt;
+      &lt;li&gt;为了解决这个问题，我们使用度矩阵 $D$ 进行归一化。具体来说，我们使用 $D^{-\frac{1}{2}}$ 来按节点的度数对每个节点进行归一化。&lt;/li&gt;
+      &lt;li&gt;因此，操作 $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H$ 实际上是首先使用 $\tilde{D}^{-\frac{1}{2}}$ 对每个节点的特征进行归一化，然后进行邻居聚合，最后再次归一化。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;通过这种方式，归一化确保了特征传播的稳定性，无论节点的度数如何。这种稳定性是训练深层神经网络所必需的，因为它可以防止梯度消失或爆炸，从而使训练过程更加稳定。&lt;/p&gt;
+
+&lt;p&gt;两种方法的核心思想是相似的：通过适当的归一化确保稳定的特征传播。但由于GCN原始论文中的方法更加直观并且易于理解（考虑到它是基于空间域的），因此它已经成为了这一领域的标准。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">GCN</summary></entry><entry><title type="html">TGCN</title><link href="http://localhost:5555/content/2023-09-19-TGCN.html" rel="alternate" type="text/html" title="TGCN" /><published>2023-09-19T00:00:00+08:00</published><updated>2023-09-19T00:00:00+08:00</updated><id>http://localhost:5555/content/TGCN</id><content type="html" xml:base="http://localhost:5555/content/2023-09-19-TGCN.html">&lt;h1 id=&quot;t-gcn-a-temporal-graph-convolutional-network-for-traffic-prediction&quot;&gt;T-GCN: A Temporal Graph Convolutional Network for Traffic Prediction&lt;/h1&gt;
+&lt;h2 id=&quot;-ieee-transactions-on-intelligent-transportation-systems-2020&quot;&gt;—— IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS, 2020&lt;/h2&gt;
+
+&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+&lt;p&gt;这篇论文和&lt;a href=&quot;/content/2023-09-19-STGCN.html&quot;&gt;STGCN&lt;/a&gt;的一个区别是，STGCN是先做时间再做空间，这篇论文是先做空间再做时间。&lt;/p&gt;
+
+&lt;h2 id=&quot;网络结构&quot;&gt;网络结构&lt;/h2&gt;
+&lt;p&gt;算法的网络结构如下图所示。简单的说来就是利用图建模道路网络结构，对于不同时间点下的道路特征，使用图网络来提取空间特征，然后将不同时间点下道路空间特征再经过一个GRU来提取时间特征。这里需要注意的是，论文中提到，建模道路结构的时候，邻接矩阵采用的是一个0-1矩阵，也就是没有考虑节点之间的空间距离。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/TGCN-network.png&quot; alt=&quot;网络结构&quot; title=&quot;TGCN-network&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;网络结构中先空间再时间的表示，论文中也给出了另一个流程图如下所示，但是其实是一致的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/TGCN-pipeline.png&quot; alt=&quot;网络结构2&quot; title=&quot;TGCN-pipeline&quot; /&gt;&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">T-GCN: A Temporal Graph Convolutional Network for Traffic Prediction —— IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS, 2020</summary></entry><entry><title type="html">STGCN</title><link href="http://localhost:5555/content/2023-09-19-STGCN.html" rel="alternate" type="text/html" title="STGCN" /><published>2023-09-19T00:00:00+08:00</published><updated>2023-09-19T00:00:00+08:00</updated><id>http://localhost:5555/content/STGCN</id><content type="html" xml:base="http://localhost:5555/content/2023-09-19-STGCN.html">&lt;h1 id=&quot;spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting&quot;&gt;Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting&lt;/h1&gt;
+&lt;h2 id=&quot;ijcai2018&quot;&gt;——IJCAI2018&lt;/h2&gt;
+
+&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;论文通过图来建模路网，并使用纯卷积神经网络结构来建模模型，基于更少的参数来实现更快的训练。&lt;/p&gt;
+
+&lt;h2 id=&quot;问题定义&quot;&gt;问题定义&lt;/h2&gt;
+&lt;p&gt;交通预测是根据最近的M个时间步的交通观测量，来预测接下来H个时间步的交通观测量。在论文中，将道路网络在时间空间上建模成如下图所示的结构，对于每一个时间点下，得到一个图，然后对多个图在时间维度上进行堆叠，得到路网的时空结构表示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/STGCN-road_graph.png&quot; alt=&quot;道路图网络&quot; title=&quot;STGCN-road_graph&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;网络结构总览&quot;&gt;网络结构总览&lt;/h1&gt;
+&lt;p&gt;论文的网络结构如下图所示。对于构建的道路图网络，输入两个ST-Conv模块后，经过输出层得到用于预测的特征。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/STGCN-net.png&quot; alt=&quot;网络结构&quot; title=&quot;STGCN-net&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;输入&lt;/strong&gt; 与建模的道路图网络结构对应的，模型的输入就是一个4维的特征向量$[batch, time, nodeNum, featChannels]$&lt;/p&gt;
+
+&lt;h1 id=&quot;st-conv-block时空卷积&quot;&gt;ST-Conv block（时空卷积）&lt;/h1&gt;
+&lt;p&gt;时空卷积的结构如网络结构图的中间所示，设计为一个三明治的结构，两个时间卷积层夹着一个空间卷积层，然后时间卷积层的输出维度为64，而空间卷积层的输出维度为16，作者认为这种设计：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“ the spatial layer in the middle is to bridge two temporal layers which can achieve fast spatial-state propagation from graph convolution through temporal convolutions. The “sandwich” structure also helps the network sufficiently apply bottleneck strategy to achieve scale compression and feature squeezing by downscaling and upscaling of channels C through the graph convolutional layer. ”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;门控时间卷积&lt;/strong&gt; 顾名思义，就是只在时间维度进行卷积操作的，所以尽管输入是一个4维的，但是卷积核就是一个[K,1,C]这样的一个卷积核。然后在时间维度的卷积后，还会经过一个门控激活函数，结构如网络结构图中最右边所示，更详细的如&lt;a href=&quot;https://zhuanlan.zhihu.com/p/286445515&quot;&gt;下图&lt;/a&gt;所示。&lt;/p&gt;
+
+&lt;p&gt;门控激活函数（GLU）的原理就是，给定输入x，将其在channel维度分成两个部分:a和b，然后使用sigmoid函数作用在b上，得到一个值域在 [0, 1] 之间的门控信号。接下来，
+a 与这个门控信号相乘，得到的结果是 GLU 的输出。GLU 的关键思想是，通过使用门控机制，模型可以根据 b 的值来决定a 的哪些部分应该被传递，哪些部分应该被阻止。这使得模型具有更大的灵活性，能够在需要时选择性地更新其信息，GLU能够用于时态卷积，辅助模型捕获数据中的时空依赖关系。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/STGCN-GLU.png&quot; alt=&quot;门控激活&quot; title=&quot;STGCN-GLU&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;空间卷积&lt;/strong&gt; 空间卷积就是一个图卷积，用来提取空间关联关系。因为输入是4维的，然后在进行图卷积之前，会对输入进行reshape成$[-1,nodeNum,Channels]$这样的形状然后再进行图卷积。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;输出层&lt;/strong&gt; 在经过时空卷积之后得到的特征，会再经过一个额外的时间卷积层，得到一个$Z\in R^{n\times c}$大小的输出，这个输出再经过一个全连接层得到每一个节点的多个时间的预测结果，最后损失函数设计为一个MSE损失。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting ——IJCAI2018</summary></entry><entry><title type="html">BSTAT</title><link href="http://localhost:5555/content/2023-09-18-BSTAT.html" rel="alternate" type="text/html" title="BSTAT" /><published>2023-09-18T00:00:00+08:00</published><updated>2023-09-18T00:00:00+08:00</updated><id>http://localhost:5555/content/BSTAT</id><content type="html" xml:base="http://localhost:5555/content/2023-09-18-BSTAT.html">&lt;h1 id=&quot;bidirectional-spatial-temporal-adaptive-transformer-for-urban-traffic-flow-forecasting&quot;&gt;Bidirectional Spatial-Temporal Adaptive Transformer for Urban Traffic Flow Forecasting&lt;/h1&gt;
+&lt;h2 id=&quot;-ieee-transactions-on-neural-networks-and-learning-systems-2022&quot;&gt;—— IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022&lt;/h2&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+&lt;p&gt;论文利用transformer来建立时间和空间关系，而且对于路网的空间结构利用，采用图来建模，但是没有考虑利用图卷积来基于路网结构更新特征。&lt;/p&gt;
+
+&lt;h2 id=&quot;问题定义&quot;&gt;问题定义&lt;/h2&gt;
+&lt;p&gt;对于N个传感器的交通流预测问题，作者考虑现有时间数据$X^P = (X_{H+1}, X_{H+2}, …, X_{H+P})\in R^{P\times N\times d}$，历史数据 $X^H = (X_{1}, X_{2}, …, X_{H})\in R^{H\times N\times d}$， 其中d为交通状况的特征数，比如只预测交通流，则d=1。基于历史和当前交通流数据，目标是要预测将来时间$X^F = (X_{H+P+1}, X_{H+P+2}, …, X_{H+P+F})$&lt;/p&gt;
+
+&lt;p&gt;历史数据知识起到正则化的作用，所以在测试的时候，仅基于当前交通流序列进行预测，不使用历史交通流数据。&lt;/p&gt;
+
+&lt;h2 id=&quot;网络结构&quot;&gt;网络结构&lt;/h2&gt;
+&lt;p&gt;论文的网络结构如下图所示，该模型的输入数据一共包括三个：交通网络（空间情景）、时间特征（时间情景）以及当前交通流（输入特征），经过预处理和特征嵌入后，将嵌入数据输入编码器。编码器由多个相同编码层组成，每层包括一个空间自适应Transformer，时间自适应Transformer以及一个DHM模块。编码器通过DHM循环变换计算实现任务自适应计算，&lt;strong&gt;动态控制计算步数&lt;/strong&gt;。在此基础上，将空间和时间特征进行融合，以获取不同时间点交通节点之间的相互依赖关系。Bi-SATA包含两个解码器，预测解码器与编码器具有相同的结构，用于未来交通状况预测，回忆解码器的结构更为简单，不包含DHM，可以作为正则器来防止预测解码器出现过拟合现象。在编码器和解码器之间，作者设计了交叉注意力模块，它模拟了每个未来(过去)时间步长和所有当前时间步长之间的直接关系。这种设计切断不同时间步之间的联系，这对缓解交通预测问题中误差传播问题具有潜在的效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;小总结&lt;/strong&gt; 论文的方法就是基于现有的时间序列的特征，首先利用时空表达，对当前序列特征进行转换增强，然后，在基于过去或将来时间序列的时空表达（不包括要预测的特征），建立与当前序列的时空关系，并基于这个关系，基于当前序列特征得到过去或未来时间序列的特征表达，基于这个特征来进行预测。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-network.png&quot; alt=&quot;网络结构&quot; title=&quot;Magic Gardens&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;结构介绍&quot;&gt;结构介绍&lt;/h2&gt;
+&lt;h3 id=&quot;输入&quot;&gt;输入&lt;/h3&gt;
+&lt;p&gt;网络的输入包括三个部分，分别是空间特征、时间特征以及交通特征。其中，空间特征通过构建路网的图结构，以点与点之间的欧式距离建立邻接矩阵，然后通过&lt;a href=&quot;/content/2023-09-24-Node2vec.html&quot;&gt;node2vec&lt;/a&gt;算法将图节点转换为特征编码，再经过两层的卷积层得到空间特征。表示为$SE\in R^{N\times D}$。&lt;/p&gt;
+
+&lt;p&gt;时间特征考虑两个：在一天中位于哪个小时（这里是划分为多个时段，以时段索引表示）以及在一周中位于哪一天，将这两个分别表示为one-hot 编码后进行concat，得到特征编码，再经过两层的卷积层得到时间特征。表示为TE。&lt;/p&gt;
+
+&lt;p&gt;交通特征：当前交通流序列$X^P\in R^{P\times N\times d}$，同样使用两层全连接网络使该序列的维度与空间嵌入和时间嵌入保持一致。&lt;/p&gt;
+
+&lt;p&gt;最终的输入就是三个特征concat得到的特征。&lt;/p&gt;
+
+&lt;h2 id=&quot;时空自适应transformer&quot;&gt;时空自适应transformer&lt;/h2&gt;
+&lt;p&gt;结构如下图所示。作者设计了一个空间Transformer和时间Transformer用于处理空间输入和时间输入。在空间（时间）输入被送入空间（时间）Transformer之前，位置嵌入和循环嵌入被整合在一起以提供情景信息（例如传感器密度、时间步、循环步）。具体来说，Transformer由多头注意力机制、带有残差操作的层归一化以及转移函数组成。在经过空间和时间Transformer处理后，进一步设计了一个融合模块以建模空间序列和时间序列的关系。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-SATA.png&quot; alt=&quot;网络结构&quot; title=&quot;BSTAT-SATA&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;位置和循环嵌入&lt;/strong&gt; 其中的位置表示序列中每一个点的位置，循环嵌入则是作者引入一个DHM用于控制transformer的循环层数，这个循环嵌入则是当前循环层数的嵌入表示。其中sin是未知，cos是循环层数。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-position-and-recurrrent-embedding.png&quot; alt=&quot;嵌入计算&quot; title=&quot;BSTAT-position and recurrrent embedding&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;时空自适应transformer&lt;/strong&gt; 时间和空间transformer的结构类似，但是存在两点差异：1、位置编码不一样，在时间transformer中，位置编码为交通流序列的时间步，空间transformer则是点在序列的位置索引；2、transformer的自注意力维数不同，时间transformer中$X^P\in R^{N\times P\times D}$,而在空间transformer中，则是$X^P\in R^{P\times N\times D}$，其中第一个就是batch的维数，这里就是在考虑一个维度的时候，将另一个维度表示为batch，虽然论文里没说，但是这里猜测应该是在时空两个transformer，就是原始的交通流序列加上时间，空间特征联合得到的输入特征，对于时间的就不变，对于空间的就前面两个维度互换作为输入。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;融合模块&lt;/strong&gt; 时空transformer分别用于捕获交通流的时间和空间依赖，但是由于交通流中的时空特性是紧密相关的，所以基于两个transformer分别得到时间和空间的输出特征后，还对两部分特征进行融合，得到时空特征。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-entangle.png&quot; alt=&quot;融合模块&quot; title=&quot;BSTAT-entangle&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;动态停止模块dhm&quot;&gt;动态停止模块（DHM）&lt;/h2&gt;
+&lt;p&gt;在时空transformer中，作者会堆叠多个transformer，为了能够控制参数量以及实现动态训练，首先作者使用RNN的循环归纳偏差（归纳偏差可以理解为一种原则，这里RNN的循环归纳偏差就是指RNN对于不同时间步的使用共享参数，保证不管时间步怎么变，参数都是一样的），然后为了实现动态计算，设计了一个DHM用于控制循环步数。&lt;/p&gt;
+
+&lt;p&gt;由于transformer特定循环的状态输出包括任务的时空信息，所以DHM以transformer的状态特征为输入，以时间transformer为例，先计算暂停概率：$p^m = \sigma(H^{m}W_h + b_n)$这里会得到p个当前序列的停止单元，对于每一个序列，会独立计算停止概率（这里不是很清楚，transformer在计算的过程中不就是对序列中所有点进行自注意力计算，如果停止了某一个序列的计算，那其他的还怎么计算，还是说每次就把停止了计算的重新替换成停止前的）。作者计算过去所有循环时间步的累计停止概率，来确定停止依据，其中M表示最大步数：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-stop.png&quot; alt=&quot;停止依据&quot; title=&quot;BSTAT-stop&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;则可以得到每个序列的实际计算步长和剩余值：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-DHM.png&quot; alt=&quot;步长计算&quot; title=&quot;BSTAT-DHM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后对不同步长的特征根据暂停概率进行加权得到最后的特征表示.根据这个公式可以猜测，对于上面的疑问，可能是就在计算停止依据时所有的一起计算，只有所有的停止了才停止，然后对于每个序列的特征在最后加权的时候就只考虑到各自的步长的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-DHM-weight.png&quot; alt=&quot;特征加权&quot; title=&quot;BSTAT-DHM-weight&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;交互注意力模块&quot;&gt;交互注意力模块&lt;/h2&gt;
+
+&lt;p&gt;与通用的在预测未来多个时间步中，采用先预测T+1,然后联合T+1的预测，预测T+2这样逐步传递预测的过程不同，考虑到这种方式容易出现错误传播，所以作者将未来时间步进行解耦，直接建模每一个未来(过去)时间步和当前所有时间步的关系，由于未来的特征是需要预测，没有特征的，所以在建模的时候三个输入就只考虑了时间和空间两个表征,以给定未来时间步和当前时间步为例，公式如下，D为特征维度。最终的输出$H_D[F_i,s_i,:]\in R^{F\times N\times D}$就是根据交叉注意力模块，根据现有时间序列的特征，得到未来时间序列的特征的表达。同样的，过去时间表达也是如此。&lt;/p&gt;
+
+&lt;p&gt;所以从这里就可以看出来，尽管用到了过去的，且过去的交通流特征是已知的，但是其实在预测的时候只用到了现在的特征，未来和过去的，都是用了现在的特征去经过时空注意力来构建特征表达的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/BSTAT-SPCross.png&quot; alt=&quot;交叉注意力&quot; title=&quot;BSTAT-SPCross&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;解码器和损失&quot;&gt;解码器和损失&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;预测解码器&lt;/strong&gt; 如上面网络结构图所示，在预测未来的时候，解码器的结构和编码器是一样的，对上面得到的未来特征表达进行解码得到预测。论文中提到“未来时间步的相关性被隔离，且每个未来时间步独立地与当前所有时间步相关，这样可以使误差累积传播得到缓解”，这个我理解就是体现在交互注意力模块中得到未来每一步的表达这个过程，在解码器中其实没有表现。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;回忆解码器&lt;/strong&gt; 这个是用于基于现在的对过去进行预测的。这是考虑到只注意现在与未来的，则在训练的过程中，是使用历史预测当前持续时间的，并在时间不重叠的未来数据上进行测试，这种不一致性容易导致训练过程中出现过拟合，同时，过往的信息其实在未来预测中是起着重要作用的。因此，采用一个回忆编码器来基于现在的预测未来的。如上面的网络结构可以看到，在回忆编码器，为了缓解预测解码器的过拟合问题，并且避免干扰预测解码器的预测任务，所以回忆解码器没有采用DHM，就只有指定层数的transformer。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;损失函数&lt;/strong&gt; 损失包括三种，一个是对未来的预测损失以及历史的重构损失，这两个就是采用MSE，然后还有一个对DHM的惩罚损失，希望用于平衡计算量和模型效率，也就是希望层数能够尽可能的少，所以损失采用上面的剩余值R(i)。（这个就是层数少，就表示每一次的剩余值小，也就是最小化剩余值）&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">Bidirectional Spatial-Temporal Adaptive Transformer for Urban Traffic Flow Forecasting —— IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022</summary></entry><entry><title type="html">Node2vec</title><link href="http://localhost:5555/content/2023-09-18-Node2vec.html" rel="alternate" type="text/html" title="Node2vec" /><published>2023-09-18T00:00:00+08:00</published><updated>2023-09-18T00:00:00+08:00</updated><id>http://localhost:5555/content/Node2vec</id><content type="html" xml:base="http://localhost:5555/content/2023-09-18-Node2vec.html">&lt;h1 id=&quot;node2vec&quot;&gt;node2vec&lt;/h1&gt;
 &lt;h2 id=&quot;介绍node2vec算法&quot;&gt;介绍node2vec算法&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node2vec&lt;/code&gt; 是一种用于生成网络图中节点的连续向量表示的算法。该算法的核心思想是通过随机游走捕捉网络的结构特性，并使用 Skip-Gram 架构从随机游走中学习节点表示。以下是该算法的基本思想：&lt;/p&gt;
@@ -64,77 +432,72 @@
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;有了这些信息，你就可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node2vec&lt;/code&gt; 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">node2vec 介绍node2vec算法</summary></entry><entry><title type="html">BSTAT</title><link href="http://localhost:5555/content/2023-09-18-BSTAT.html" rel="alternate" type="text/html" title="BSTAT" /><published>2023-09-18T00:00:00+08:00</published><updated>2023-09-18T00:00:00+08:00</updated><id>http://localhost:5555/content/BSTAT</id><content type="html" xml:base="http://localhost:5555/content/2023-09-18-BSTAT.html">&lt;h1 id=&quot;bidirectional-spatial-temporal-adaptive-transformer-for-urban-traffic-flow-forecasting&quot;&gt;Bidirectional Spatial-Temporal Adaptive Transformer for Urban Traffic Flow Forecasting&lt;/h1&gt;
-&lt;h2 id=&quot;-ieee-transactions-on-neural-networks-and-learning-systems-2022&quot;&gt;—— IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022&lt;/h2&gt;
+&lt;p&gt;有了这些信息，你就可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node2vec&lt;/code&gt; 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">node2vec 介绍node2vec算法</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/tool/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/tool/content</id><content type="html" xml:base="http://localhost:5555/tool/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
-&lt;p&gt;论文利用transformer来建立时间和空间关系，而且对于路网的空间结构利用，采用图来建模，但是没有考虑利用图卷积来基于路网结构更新特征。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="tool" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/paper/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/paper/content</id><content type="html" xml:base="http://localhost:5555/paper/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;h2 id=&quot;问题定义&quot;&gt;问题定义&lt;/h2&gt;
-&lt;p&gt;对于N个传感器的交通流预测问题，作者考虑现有时间数据$X^P = (X_{H+1}, X_{H+2}, …, X_{H+P})\in R^{P\times N\times d}$，历史数据 $X^H = (X_{1}, X_{2}, …, X_{H})\in R^{H\times N\times d}$， 其中d为交通状况的特征数，比如只预测交通流，则d=1。基于历史和当前交通流数据，目标是要预测将来时间$X^F = (X_{H+P+1}, X_{H+P+2}, …, X_{H+P+F})$&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-BSTAT.html&quot;&gt;BSTAT&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-STGCN.html&quot;&gt;STGCN&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IJCAI2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-TGCN.html&quot;&gt;TGCN&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS, 2020&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="paper" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/learning/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/learning/content</id><content type="html" xml:base="http://localhost:5555/learning/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;p&gt;历史数据知识起到正则化的作用，所以在测试的时候，仅基于当前交通流序列进行预测，不使用历史交通流数据。&lt;/p&gt;
-
-&lt;h2 id=&quot;网络结构&quot;&gt;网络结构&lt;/h2&gt;
-&lt;p&gt;论文的网络结构如下图所示，该模型的输入数据一共包括三个：交通网络（空间情景）、时间特征（时间情景）以及当前交通流（输入特征），经过预处理和特征嵌入后，将嵌入数据输入编码器。编码器由多个相同编码层组成，每层包括一个空间自适应Transformer，时间自适应Transformer以及一个DHM模块。编码器通过DHM循环变换计算实现任务自适应计算，&lt;strong&gt;动态控制计算步数&lt;/strong&gt;。在此基础上，将空间和时间特征进行融合，以获取不同时间点交通节点之间的相互依赖关系。Bi-SATA包含两个解码器，预测解码器与编码器具有相同的结构，用于未来交通状况预测，回忆解码器的结构更为简单，不包含DHM，可以作为正则器来防止预测解码器出现过拟合现象。在编码器和解码器之间，作者设计了交叉注意力模块，它模拟了每个未来(过去)时间步长和所有当前时间步长之间的直接关系。这种设计切断不同时间步之间的联系，这对缓解交通预测问题中误差传播问题具有潜在的效果。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-network.png&quot; alt=&quot;网络结构&quot; title=&quot;Magic Gardens&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;结构介绍&quot;&gt;结构介绍&lt;/h2&gt;
-&lt;h3 id=&quot;输入&quot;&gt;输入&lt;/h3&gt;
-&lt;p&gt;网络的输入包括三个部分，分别是空间特征、时间特征以及交通特征。其中，空间特征通过构建路网的图结构，以点与点之间的欧式距离建立邻接矩阵，然后通过&lt;a href=&quot;/content/2023-09-24-Node2vec.html&quot;&gt;node2vec&lt;/a&gt;算法将图节点转换为特征编码，再经过两层的卷积层得到空间特征。表示为$SE\in R^{N\times D}$。&lt;/p&gt;
-
-&lt;p&gt;时间特征考虑两个：在一天中位于哪个小时（这里是划分为多个时段，以时段索引表示）以及在一周中位于哪一天，将这两个分别表示为one-hot 编码后进行concat，得到特征编码，再经过两层的卷积层得到时间特征。表示为TE。&lt;/p&gt;
-
-&lt;p&gt;交通特征：当前交通流序列$X^P\in R^{P\times N\times d}$，同样使用两层全连接网络使该序列的维度与空间嵌入和时间嵌入保持一致。&lt;/p&gt;
-
-&lt;p&gt;最终的输入就是三个特征concat得到的特征。&lt;/p&gt;
-
-&lt;h2 id=&quot;时空自适应transformer&quot;&gt;时空自适应transformer&lt;/h2&gt;
-&lt;p&gt;结构如下图所示。作者设计了一个空间Transformer和时间Transformer用于处理空间输入和时间输入。在空间（时间）输入被送入空间（时间）Transformer之前，位置嵌入和循环嵌入被整合在一起以提供情景信息（例如传感器密度、时间步、循环步）。具体来说，Transformer由多头注意力机制、带有残差操作的层归一化以及转移函数组成。在经过空间和时间Transformer处理后，进一步设计了一个融合模块以建模空间序列和时间序列的关系。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-SATA.png&quot; alt=&quot;网络结构&quot; title=&quot;BSTAT-SATA&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;位置和循环嵌入&lt;/strong&gt; 其中的位置表示序列中每一个点的位置，循环嵌入则是作者引入一个DHM用于控制transformer的循环层数，这个循环嵌入则是当前循环层数的嵌入表示。其中sin是未知，cos是循环层数。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-position-and-recurrrent-embedding.png&quot; alt=&quot;嵌入计算&quot; title=&quot;BSTAT-position and recurrrent embedding&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;时空自适应transformer&lt;/strong&gt; 时间和空间transformer的结构类似，但是存在两点差异：1、位置编码不一样，在时间transformer中，位置编码为交通流序列的时间步，空间transformer则是点在序列的位置索引；2、transformer的自注意力维数不同，时间transformer中$X^P\in R^{N\times P\times D}$,而在空间transformer中，则是$X^P\in R^{P\times N\times D}$，其中第一个就是batch的维数，这里就是在考虑一个维度的时候，将另一个维度表示为batch，虽然论文里没说，但是这里猜测应该是在时空两个transformer，就是原始的交通流序列加上时间，空间特征联合得到的输入特征，对于时间的就不变，对于空间的就前面两个维度互换作为输入。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;融合模块&lt;/strong&gt; 时空transformer分别用于捕获交通流的时间和空间依赖，但是由于交通流中的时空特性是紧密相关的，所以基于两个transformer分别得到时间和空间的输出特征后，还对两部分特征进行融合，得到时空特征。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-entangle.png&quot; alt=&quot;融合模块&quot; title=&quot;BSTAT-entangle&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;动态停止模块dhm&quot;&gt;动态停止模块（DHM）&lt;/h2&gt;
-&lt;p&gt;在时空transformer中，作者会堆叠多个transformer，为了能够控制参数量以及实现动态训练，首先作者使用RNN的循环归纳偏差（归纳偏差可以理解为一种原则，这里RNN的循环归纳偏差就是指RNN对于不同时间步的使用共享参数，保证不管时间步怎么变，参数都是一样的），然后为了实现动态计算，设计了一个DHM用于控制循环步数。&lt;/p&gt;
-
-&lt;p&gt;由于transformer特定循环的状态输出包括任务的时空信息，所以DHM以transformer的状态特征为输入，以时间transformer为例，先计算暂停概率：$p^m = \sigma(H^{m}W_h + b_n)$这里会得到p个当前序列的停止单元，对于每一个序列，会独立计算停止概率（这里不是很清楚，transformer在计算的过程中不就是对序列中所有点进行自注意力计算，如果停止了某一个序列的计算，那其他的还怎么计算，还是说每次就把停止了计算的重新替换成停止前的）。作者计算过去所有循环时间步的累计停止概率，来确定停止依据，其中M表示最大步数：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-stop.png&quot; alt=&quot;停止依据&quot; title=&quot;BSTAT-stop&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;则可以得到每个序列的实际计算步长和剩余值：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-DHM.png&quot; alt=&quot;步长计算&quot; title=&quot;BSTAT-DHM&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最后对不同步长的特征根据暂停概率进行加权得到最后的特征表示.根据这个公式可以猜测，对于上面的疑问，可能是就在计算停止依据时所有的一起计算，只有所有的停止了才停止，然后对于每个序列的特征在最后加权的时候就只考虑到各自的步长的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-DHM-weight.png&quot; alt=&quot;特征加权&quot; title=&quot;BSTAT-DHM-weight&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;交互注意力模块&quot;&gt;交互注意力模块&lt;/h2&gt;
-
-&lt;p&gt;与通用的在预测未来多个时间步中，采用先预测T+1,然后联合T+1的预测，预测T+2这样逐步传递预测的过程不同，考虑到这种方式容易出现错误传播，所以作者将未来时间步进行解耦，直接建模每一个未来(过去)时间步和当前所有时间步的关系，由于未来的特征是需要预测，没有特征的，所以在建模的时候三个输入就只考虑了时间和空间两个表征,以给定未来时间步和当前时间步为例，公式如下，D为特征维度。最终的输出$H_D[F_i,s_i,:]\in R^{F\times N\times D}$就是根据交叉注意力模块，根据现有时间序列的特征，得到未来时间序列的特征的表达。同样的，过去时间表达也是如此。&lt;/p&gt;
-
-&lt;p&gt;所以从这里就可以看出来，尽管用到了过去的，且过去的交通流特征是已知的，但是其实在预测的时候只用到了现在的特征，未来和过去的，都是用了现在的特征去经过时空注意力来构建特征表达的。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/BSTAT-SPCross.png&quot; alt=&quot;交叉注意力&quot; title=&quot;BSTAT-SPCross&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;解码器和损失&quot;&gt;解码器和损失&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;预测解码器&lt;/strong&gt; 如上面网络结构图所示，在预测未来的时候，解码器的结构和编码器是一样的，对上面得到的未来特征表达进行解码得到预测。论文中提到“未来时间步的相关性被隔离，且每个未来时间步独立地与当前所有时间步相关，这样可以使误差累积传播得到缓解”，这个我理解就是体现在交互注意力模块中得到未来每一步的表达这个过程，在解码器中其实没有表现。&lt;/p&gt;
-
-&lt;p&gt;#回忆解码器** 这个是用于基于现在的对过去进行预测的。这是考虑到只注意现在与未来的，则在训练的过程中，是使用历史预测当前持续时间的，并在时间不重叠的未来数据上进行测试，这种不一致性容易导致训练过程中出现过拟合，同时，过往的信息其实在未来预测中是起着重要作用的。因此，采用一个回忆编码器来基于现在的预测未来的。如上面的网络结构可以看到，在回忆编码器，为了缓解预测解码器的过拟合问题，并且避免干扰预测解码器的预测任务，所以回忆解码器没有采用DHM，就只有指定层数的transformer。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;损失函数&lt;/strong&gt; 损失包括三种，一个是对未来的预测损失以及历史的重构损失，这两个就是采用MSE，然后还有一个对DHM的惩罚损失，希望用于平衡计算量和模型效率，也就是希望层数能够尽可能的少，所以损失采用上面的剩余值R(i)。（这个就是层数少，就表示每一次的剩余值小，也就是最小化剩余值）&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">Bidirectional Spatial-Temporal Adaptive Transformer for Urban Traffic Flow Forecasting —— IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022</summary></entry><entry><title type="html">Label Propagation</title><link href="http://localhost:5555/content/2023-08-24-Label-Propagation.html" rel="alternate" type="text/html" title="Label Propagation" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/content/Label-Propagation</id><content type="html" xml:base="http://localhost:5555/content/2023-08-24-Label-Propagation.html">&lt;blockquote&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-24-Label-Propagation.html&quot;&gt;Label Propagation&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-Node2vec.html&quot;&gt;Node2vec&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-GCN.html&quot;&gt;GCN&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;_&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="learning" /><summary type="html">Content</summary></entry><entry><title type="html">Label Propagation</title><link href="http://localhost:5555/content/2023-08-24-Label-Propagation.html" rel="alternate" type="text/html" title="Label Propagation" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/content/Label-Propagation</id><content type="html" xml:base="http://localhost:5555/content/2023-08-24-Label-Propagation.html">&lt;blockquote&gt;
   &lt;p&gt;/language Chinese&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -747,60 +1110,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;行为模式的分析可以为目标重识别提供非常有价值的上下文信息，帮助我们更准确地识别目标。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/learning/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/learning/content</id><content type="html" xml:base="http://localhost:5555/learning/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-24-Label-Propagation.html&quot;&gt;Label Propagation&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-Node2vec.html&quot;&gt;Node2vec&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="learning" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/paper/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/paper/content</id><content type="html" xml:base="http://localhost:5555/paper/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-BSTAT.html&quot;&gt;BSTAT&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="paper" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/tool/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/tool/content</id><content type="html" xml:base="http://localhost:5555/tool/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="tool" /><summary type="html">Content</summary></entry><entry><title type="html">Markov</title><link href="http://localhost:5555/content/2023-08-23-Markov.html" rel="alternate" type="text/html" title="Markov" /><published>2023-08-23T00:00:00+08:00</published><updated>2023-08-23T00:00:00+08:00</updated><id>http://localhost:5555/content/Markov</id><content type="html" xml:base="http://localhost:5555/content/2023-08-23-Markov.html">&lt;blockquote&gt;
+&lt;p&gt;行为模式的分析可以为目标重识别提供非常有价值的上下文信息，帮助我们更准确地识别目标。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry><entry><title type="html">Markov</title><link href="http://localhost:5555/content/2023-08-23-Markov.html" rel="alternate" type="text/html" title="Markov" /><published>2023-08-23T00:00:00+08:00</published><updated>2023-08-23T00:00:00+08:00</updated><id>http://localhost:5555/content/Markov</id><content type="html" xml:base="http://localhost:5555/content/2023-08-23-Markov.html">&lt;blockquote&gt;
   &lt;p&gt;/language Chinese&lt;/p&gt;
 &lt;/blockquote&gt;
 

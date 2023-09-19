@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>GCN · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Build Jekyll site with the GitBook style.
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mingkai Qiu"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+
+<link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+
+
+
+            <link rel="prev" href="/content/2023-09-18-Node2vec.html" />
+        
+
+        
+            <link rel="next" href="/content/2023-09-19-STGCN.html" />
+        
+    </head>
+    <body>
+        <div class="book"><div class="book-summary">
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="">
+            
+                <a href="/">
+                    Mandren&#39;s Blog
+
+<li class="chapter" data-level="1.2" data-path="/paper/">
+    <a href="/paper/2023-08-24-content.html">
+        Paper
+    </a>
+</li>
+<li class="chapter" data-level="1.3" data-path="/learning/">
+    <a href="/learning/2023-08-24-content.html">
+        Learning
+    </a>
+</li>
+<li class="chapter" data-level="1.4" data-path="/tool/">
+    <a href="/tool/2023-08-24-content.html">
+        Tool
+    </a>
+</li>
+                </a>
+            </li>
+
+            
+
+
+
+
+
+
+</ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >GCN</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/content/GCN">GCN</h1>
+                    
+
+                    <h1 id="gcn">GCN</h1>
+
+<h2 id="gnn">GNN</h2>
+<blockquote>
+  <p>本文部分内容参考自：<a href="http://xtf615.com/2019/02/24/gcn/">传送门</a></p>
+</blockquote>
+
+<p>图网络可以理解成给定网络的拓扑结构，包括点和边，输入点和边的特征（边可能没有特征，只有一个权重），得到关于每一个点的输出作为点的预测，而损失，就是定义为点的预测值和实际值的一个比如交叉熵损失或者是MSE。</p>
+
+<p>上面的解释是一种专注于节点的图（node-focused），如果是专注于图（graph-focused），则是在图中新增加一个节点，表示一个全图的节点，然后只预测这个点的值与图的实际值进行一个损失计算。</p>
+
+<p>图中涉及到的参数定义如下,在图中，一般用$l$表示特征向量，而$x$表示状态向量</p>
+
+<p><img src="/images/GCN-notation.png" alt="参数定义" title="GCN-notation" /></p>
+
+<p><strong>节点更新</strong>  GNN中，点之间通过交换信息来更新自己的节点状态，也就是节点的状态根据点自身的特征，邻居节点的特征来进行更新，直到达到一个稳定值。</p>
+
+<p>因此，参数更新的过程，就是对图网络的特征进行更新后，不断迭代到稳定状态后，再计算损失，进行参数更新。</p>
+
+<p>对于一个节点，其状态向量$x_n\in R^s$以及输出$o_n$的更新方式为：</p>
+
+<p>$x_n = f_A(l_n,l_{co[n]},x_{ne[n]},l_{ne[n]})$</p>
+
+<p>$o_n = g_A(x_n, l_n)$
+也就是，点的状态向量与自身特征，连接边的特征，连接点的特征以及状态向量相关（此处假设边没有状态向量，有特征向量，如果没有特征向量，则只有权重，体现在邻接矩阵中），然后再根据点的状态向量，得到输出结果。</p>
+
+<p>节点更新及模型优化步骤如下：</p>
+
+<ol>
+  <li>聚合邻居信息：对于每一个节点，它会从其邻居节点收集信息。这通常是通过一种称为“聚合函数”的函数来实现的。常见的聚合函数包括均值、和、最大值或者concat等；</li>
+  <li>更新节点表示：根据收集到的邻居信息以及当前节点的信息，更新该节点的表示。这通常是通过一种称为“更新函数”的函数来实现的。一个常见的更新函数是将聚合得到的邻居信息与当前节点信息连接起来，并通过一个全连接层或其他非线性激活函数进行处理。</li>
+  <li>重复迭代：重复上面的过程中，迭代T次后得到接近不动解：$x(T) \approx x$， $T$一般是一个超参数</li>
+  <li>梯度计算：计算参数权重的梯度</li>
+  <li>权重更新：使用该梯度更新权重</li>
+</ol>
+
+<p><strong>具体实现</strong>
+对于上面状态向量的更新，在编程时可以表示为如下：</p>
+
+<p>$x_n = \sum_{u\in ne[n]}h_A(l_n, l_{(n,u)},x_u,l_u), n\in N$</p>
+
+<p>这里也就是把点的特征向量、边的特征向量、邻居节点的特征向量和状态向量concat起来（或者是均值、和、最大值等），然后输入一个MLP（也就是$h_A$函数）中就可以得到更新后的状态向量</p>
+
+<h2 id="gcn-1">GCN</h2>
+
+<p><strong>GCN与拉普拉斯矩阵</strong> 图卷积网络（GCN）是一种深度学习模型，用于处理图数据。为了在图上执行卷积，GCN利用了图的拉普拉斯矩阵（Laplacian Matrix）的特性。拉普拉斯矩阵描述了图中节点之间的关系，是许多图论算法和图信号处理方法的基础。</p>
+
+<p>给定一个无向图 $G = (V, E)$ ，其中 $V$ 是节点集， $E$ 是边集，我们可以定义图的邻接矩阵 $A$ 和度矩阵 $D$。</p>
+
+<ol>
+  <li><strong>邻接矩阵 $A$</strong>:
+    <ul>
+      <li>$A$ 是一个 $V\times V$ 的矩阵。</li>
+      <li>如果节点 $i$ 和节点 $j$ 之间存在边，则 $A_{ij} = 1$；否则 $A_{ij} = 0$。</li>
+    </ul>
+  </li>
+  <li><strong>度矩阵 $D$</strong>:
+    <ul>
+      <li>$D$ 是一个对角矩阵，其中对角线上的元素 $D_{ii}$ 表示节点 $i$ 的度（与它相连的边的数量）。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>拉普拉斯矩阵 $L$ 定义为：$L = D - A$</p>
+
+<p>GCN 中经常使用的是归一化的拉普拉斯矩阵，定义为：
+$\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
+其中 $I$ 是单位矩阵。</p>
+
+<p>该归一化有助于使得传播过程更为稳定。在 GCN 中，特征传播过程可以简化为应用归一化的邻接矩阵到节点特征上。</p>
+
+<p>拉普拉斯矩阵是一个半正定对称矩阵，包含如下性质：</p>
+<ul>
+  <li>对角线上的元素代表每个节点的度。</li>
+  <li>一定具有n个线性无关的特征向量（n是Graph节点数）</li>
+  <li>半正定矩阵特征值一定非负</li>
+  <li>对称矩阵特征向量相互正交，即所有特征向量构成的矩阵为正交矩阵</li>
+</ul>
+
+<p>在图卷积网络（GCN）中，拉普拉斯矩阵是关键的组成部分，因为它描述了图中节点之间的连接关系，这有助于特征在图上的传播。</p>
+
+<h3 id="gcn1代">GCN1代</h3>
+
+<p>传统的傅里叶变换如下：</p>
+
+<p><img src="/images/GCN-fourier.png" alt="傅里叶变换" title="GCN-fourier" /></p>
+
+<p>在GCN上，利用拉普拉斯矩阵，设$\Phi_k$是拉普拉斯矩阵的特征向量，$\lambda_k$是特征值，在GCN中，与传统傅里叶变换做了下面的对应：</p>
+
+<p><img src="/images/GCN-fourier1.png" alt="傅里叶变换对应" title="GCN-fourier1" /></p>
+
+<p>此时图上的傅里叶变换的矩阵形式则变成$\hat{f} = \Phi^{T}f$。因为$\Phi$是拉普拉斯矩阵的特征向量矩阵，这个矩阵是一个正交矩阵，也就是逆等于转置($\Phi^T \Phi = I$)，所以有$f = \Phi \hat{f}$，也就是逆变换时，直接左乘$\Phi$即可</p>
+
+<p>考虑卷积定理：函数卷积的傅里叶变换是函数傅里叶变换的乘积公式如下：</p>
+
+<p>$f*g = F^{-1}{F{f}\cdot F{g}}$</p>
+
+<p>也就是时域上的卷积等于先傅里叶变换转化为频域后进行乘积，再逆傅里叶变换的结果。
+则此时在图上的卷积就变成：$(f*h)_{g} = \Phi diag[\hat{h}(\lambda_1),\dots,\hat{h}(\lambda_1)]\Phi^Tf$,这里左乘$\Phi$就是傅里叶逆变换，第二个的diag则是为了进行对应位置元素的乘积，将卷积核$h$的傅里叶变换$\Phi^T h\in R^{N\times 1}$（图的卷积核就是一维，大小为图节点数目的卷积核）转换成对角矩阵的形式（这里也是将特征向量表示为特征值的函数），后面两个则是函数$f$的傅里叶变换。</p>
+
+<p>这里把卷积核的傅里叶变换转换成对角矩阵的形式，是因为这样就是把一维卷积核的傅里叶变换，直接变成二维卷积核，也就是把傅里叶变换后的结果直接作为参数向量，让网络进行学习。</p>
+
+<p>这个表达形式就是第一代的GCN，这里存在的问题是：</p>
+
+<ul>
+  <li>
+    <p>复杂度太高，需要对拉普拉斯矩阵进行谱分解求解特征向量$\Phi$，这个在图很大的时候复杂度较高，为$O(n^2)$</p>
+  </li>
+  <li>
+    <p>卷积核的参数为n，当图较大的时候，卷积核很大</p>
+  </li>
+</ul>
+
+<h3 id="gcn2代">GCN2代</h3>
+
+<p>卷积核$diag[\hat{h}(\lambda_1),\dots,\hat{h}(\lambda_1)]$是关于特征值的函数，可以写成$g_{\theta}(\Lambda)$，然后把这个定义成k阶多项式的形式：$g_{\theta}(\Lambda)\approx \sum_{k=0}^K{\theta_k \Lambda^k}$,则原始的卷积操作可以变成：</p>
+
+<p>$g_{\theta}*x\approx \Phi \sum_{k=0}^K \theta_{k} \Lambda^k\Phi^T x$</p>
+
+<p>$=\sum_{k=0}^K \theta_{k}(\Phi \Lambda^k \Phi^T)x$</p>
+
+<p>$=\sum_{k=0}^K \theta_{k}(\Phi \Lambda \Phi^T)^kx$</p>
+
+<p>=$=\sum_{k=0}^K\theta_kL^k x$</p>
+
+<p>这里就不需要进行特征分解，只需要对拉普拉斯矩阵进行变换，实现将$L^k$计算出来，则可以在前行传播的时候使用，复杂度为$O(Kn^2)$。</p>
+
+<p>同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息</p>
+
+<p>同时，考虑到<strong>任何多项式都可以使用切比雪夫展开式近似（类比函数可以利用泰勒展开进行近似）</strong>，则可以引入切比雪夫多项式的$K$阶截断来获得对$L^K$的近似，进而获得对$g_{\theta}(\Lambda)的近似$：</p>
+
+\[g_{\theta^{\prime}}(\Lambda) \approx\sum_{k=0}^K{\theta^{\prime}_{k}T_{k}(\tilde{\Lambda})}\]
+
+<p>其中$\tilde{\Lambda} = \frac{2}{\lambda_{max}}\Lambda - I_n$，是拉普拉斯矩阵$L$的最大值(即谱半径)缩放后的特征向量矩阵（也就是最大值缩放为1，防止连乘爆炸），$\theta^{\prime} \in R^{K}$是一个切比雪夫向量，$\theta^{\prime}_{k}$是第k维分量。</p>
+
+<p>则可以得到：\(g_{\theta}*x\approx \sum_{k=0}^K \theta_{k}^{\prime}(\Phi T_K(\tilde{\Lambda})\Phi^T)^kx = \sum_{k=0}^K \theta^{\prime}_{k}T_{k}(\tilde{L})x\)</p>
+
+<p>其中$\tilde{L} = \frac{2}{\lambda_{max}}L-I_n$.</p>
+
+<p>因为切比雪夫多项式可以用递归来定义:$T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x), T_{0}(x) = 1, T_1(x) = x$，因此卷积的计算就变成可以迭代计算的公式，用于替换原始矩阵的k次方计算。</p>
+
+<h3 id="gcn3代">GCN3代</h3>
+<p>GCN3代在2代的基础上，进行了进一步简化：</p>
+
+<ul>
+  <li>取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核</li>
+  <li>深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可</li>
+  <li>加入参数的约束，如: $\lambda_{max}\approx2$</li>
+</ul>
+
+<p>当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了</p>
+
+<p>进一步假设\(\theta^{\prime}_0 = -\theta^{\prime}_1\)，则此时只有一个参数\(\theta\): \(g_{\theta}^{\prime}*x = \theta(I_n+D^{-1/2}AD^{-1/2})x\)。</p>
+
+<p>同时，考虑到$I_n+D^{-1/2}AD^{-1/2}$的谱半径（也就是最大特征值）在[0,2]太大，所以进行重归一化，变成:$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}$，其中$\tilde{A} = A+I_n$，也就是邻接矩阵加上自连接，\(\tilde{D}_{i,j} = \sum_{j} \tilde{A}_{i,j}\)，也就是变换后的连接矩阵的度矩阵（点的度为所连接的点的数目）。</p>
+
+<p>那么最后的形式就是：$g_{\theta}^{\prime}*x = \theta(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2})x$。</p>
+
+<p>考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）</p>
+
+<p>写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)</p>
+
+<h2 id="gcn的数学形式">GCN的数学形式</h2>
+<p>图卷积网络（GCN）的数学形式旨在将节点的特征和图的结构信息结合起来，以获得每个节点的新的特征表示。以下是GCN的基本数学形式：</p>
+
+<p>考虑一个图 $G$，其邻接矩阵为 $A$，并附加一个单位矩阵 $I$ 以考虑自环。因此，修正后的邻接矩阵为 $\tilde{A} = A + I$。</p>
+
+<p>对于每个节点，我们还有一个特征矩阵 $X$，其中第 $i$ 行是节点 $i$ 的特征向量。</p>
+
+<ol>
+  <li>
+    <p><strong>计算度矩阵</strong>:
+首先，我们计算图 $G$ 的度矩阵 $\tilde{D}$，其中 $\tilde{D}_{ii}$ 是节点 $i$ 的度（与它相连的边的数量）。</p>
+  </li>
+  <li><strong>特征传播</strong>:
+GCN的关键步骤是特征传播，这是通过以下公式实现的：
+$H^{(l+1)} = \sigma\left( \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{(l)} A^{(l)} \right)$
+其中：
+    <ul>
+      <li>$H^{(l)}$ 是第 $l$ 层的节点特征矩阵。</li>
+      <li>$H^{(0)}$ 是初始的节点特征矩阵，即 $X$。</li>
+      <li>$A^{(l)}$ 是第 $l$ 层的权重矩阵，需要在训练过程中学习。</li>
+      <li>$\sigma$ 是一个非线性激活函数，例如ReLU。</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>多层传播</strong>:
+实际的GCN模型可能包含多个这样的层，每一层都通过上述公式进行特征传播。这意味着每个节点在每一层都会聚合其邻居的信息。</p>
+  </li>
+  <li><strong>输出</strong>:
+对于节点分类任务，最后一层的输出 $H^{(L)}$ 可以传递给一个分类器进行处理。对于整个图的分类或回归任务，可以使用全局池化策略（如平均、最大池化等）来从最后一层的所有节点特征中获取单个图的表示。</li>
+</ol>
+
+<p>GCN的特征传播公式可以分为以下几个步骤进行理解：</p>
+
+<ul>
+  <li>
+    <p><strong>邻接矩阵的归一化</strong>:
+$\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$
+这一步确保了特征在邻居之间的传播是稳定的，特别是在聚合多个邻居的信息时。归一化后的邻接矩阵能够使得每个节点的贡献与其度数成反比。</p>
+  </li>
+  <li>
+    <p><strong>特征聚合</strong>:
+乘以 $H^{(l)}$ 是特征的聚合步骤，它考虑了每个节点及其邻居的特征。简单地说，这一步骤将一个节点及其邻居的特征聚合到该节点上。</p>
+  </li>
+  <li>
+    <p><strong>线性转换</strong>:
+最后，乘以权重矩阵 $A^{(l)}$ 是一个线性转换，它可以将聚合后的特征映射到新的特征空间。这允许模型学习更复杂和抽象的特征表示。</p>
+  </li>
+  <li>
+    <p><strong>非线性激活</strong>:
+函数 $\sigma$ 是一个非线性激活函数（如ReLU），它为模型引入了非线性，使模型能够学习更复杂的函数。</p>
+  </li>
+</ul>
+
+<h2 id="gcn的归一化">GCN的归一化</h2>
+<p>可以看到GCN中使用的归一化为$\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$，而一般的拉普拉斯矩阵归一化为：$I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
+这两种表示实际上源于相同的思想，但在实践中有些差异。这两种形式都试图通过归一化来稳定特征的传播，但它们的应用和解释略有不同。</p>
+
+<ol>
+  <li>
+    <p><strong>谱域的解释</strong>:
+ 归一化的拉普拉斯矩阵 $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$ 起源于图信号处理的谱域方法。在谱图卷积的背景下，这种归一化有助于确保特征值位于[0, 2]的范围内，从而使得谱滤波变得更加稳定。</p>
+  </li>
+  <li>
+    <p><strong>空间域的解释</strong>:
+ 在GCN的原始论文中，作者采用了空间域的方法，而不是谱域的方法。他们的目标是直接模拟局部邻域内的信息聚合。为了实现这一点，他们使用了修正的邻接矩阵 $\tilde{A} = A + I$（加入自环）和相应的度矩阵 $\tilde{D}$。然后，他们使用了归一化的形式 $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$ 来确保信息在邻居之间传播时的稳定性。</p>
+  </li>
+</ol>
+
+<p>基于空间域的解释中，归一化的目的是确保节点特征的传播稳定并防止梯度消失或爆炸。我们可以从直观和数学两个方面来理解这种归一化的效果。</p>
+
+<ol>
+  <li><strong>直观解释</strong>:
+    <ul>
+      <li>当我们考虑一个节点及其邻居时，我们希望这些节点的贡献是均衡的，而不是由于某些节点的度数特别高而被主导。换句话说，一个与许多其他节点相连的节点不应该对聚合结果产生过大的影响。</li>
+      <li>通过归一化，我们确保每个节点的贡献与其度数成反比。这意味着度数高的节点在聚合过程中的权重会减少，而度数低的节点的权重会增加，从而使得聚合过程更加均衡。</li>
+    </ul>
+  </li>
+  <li><strong>数学解释</strong>:
+    <ul>
+      <li>考虑邻接矩阵 $A$ 的一个简单操作，即与特征矩阵 $H$ 的矩阵乘法，即 $AH$。这实际上是将每个节点的特征与其邻居相加。但是，如果一个节点有很多邻居，那么它的特征值可能会变得非常大。</li>
+      <li>为了解决这个问题，我们使用度矩阵 $D$ 进行归一化。具体来说，我们使用 $D^{-\frac{1}{2}}$ 来按节点的度数对每个节点进行归一化。</li>
+      <li>因此，操作 $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H$ 实际上是首先使用 $\tilde{D}^{-\frac{1}{2}}$ 对每个节点的特征进行归一化，然后进行邻居聚合，最后再次归一化。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>通过这种方式，归一化确保了特征传播的稳定性，无论节点的度数如何。这种稳定性是训练深层神经网络所必需的，因为它可以防止梯度消失或爆炸，从而使训练过程更加稳定。</p>
+
+<p>两种方法的核心思想是相似的：通过适当的归一化确保稳定的特征传播。但由于GCN原始论文中的方法更加直观并且易于理解（考虑到它是基于空间域的），因此它已经成为了这一领域的标准。</p>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+                        <a href="/content/2023-09-18-Node2vec.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Node2vec">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/content/2023-09-19-STGCN.html" class="navigation navigation-next navigation-unique" aria-label="Next page: STGCN">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "STGCN",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/content/2023-09-19-STGCN.md",
+            "ref": "_posts/content/2023-09-19-STGCN.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            }
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Mandren's Blog",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_posts/content/2023-09-19-GCN.md",
+        "mtime": "2023-09-19 00:00:00 +0800",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2023-09-20 11:43:21 +0800"
+    },
+    "basePath": "",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+
+</body>
+</html>

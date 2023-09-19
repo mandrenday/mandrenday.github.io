@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Node2vec · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>STGCN · Mandren&#39;s Blog</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Build Jekyll site with the GitBook style.
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Mingkai Qiu"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
@@ -23,11 +23,11 @@
 
 
 
-            <link rel="prev" href="/content/2023-09-18-BSTAT.html" />
+            <link rel="prev" href="/content/2023-09-19-GCN.html" />
         
 
         
-            <link rel="next" href="/content/2023-09-19-GCN.html" />
+            <link rel="next" href="/content/2023-09-19-TGCN.html" />
         
     </head>
     <body>
@@ -80,7 +80,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Node2vec</a>
+                            <a href="." >STGCN</a>
                         
                     </h1>
                 </div>
@@ -93,75 +93,43 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/content/Node2vec">Node2vec</h1>
+                        <h1 id="/content/STGCN">STGCN</h1>
                     
 
-                    <h1 id="node2vec">node2vec</h1>
-<h2 id="介绍node2vec算法">介绍node2vec算法</h2>
+                    <h1 id="spatio-temporal-graph-convolutional-networks-a-deep-learning-framework-for-traffic-forecasting">Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting</h1>
+<h2 id="ijcai2018">——IJCAI2018</h2>
 
-<p><code class="language-plaintext highlighter-rouge">node2vec</code> 是一种用于生成网络图中节点的连续向量表示的算法。该算法的核心思想是通过随机游走捕捉网络的结构特性，并使用 Skip-Gram 架构从随机游走中学习节点表示。以下是该算法的基本思想：</p>
+<h2 id="概要">概要</h2>
+<p>论文通过图来建模路网，并使用纯卷积神经网络结构来建模模型，基于更少的参数来实现更快的训练。</p>
 
-<ol>
-  <li>
-    <p><strong>随机游走</strong>：从每个节点开始，进行多次随机游走，每次游走产生一个节点序列。</p>
-  </li>
-  <li>
-    <p><strong>优化随机游走</strong>：不同于简单的随机游走，<code class="language-plaintext highlighter-rouge">node2vec</code> 在随机游走过程中引入了两个参数：ppp 和 qqq，它们控制游走的搜索策略，以便更好地捕捉网络的社区结构（局部同质性）和结构当中的桥（结构的多样性）。</p>
+<h2 id="问题定义">问题定义</h2>
+<p>交通预测是根据最近的M个时间步的交通观测量，来预测接下来H个时间步的交通观测量。在论文中，将道路网络在时间空间上建模成如下图所示的结构，对于每一个时间点下，得到一个图，然后对多个图在时间维度上进行堆叠，得到路网的时空结构表示。</p>
 
-    <ul>
-      <li>$p$：返回参数。它控制游走者返回上一节点的倾向。如果 $p$ 很高，游走者更倾向于探索新的节点而不是返回。</li>
-      <li>$q$：外向参数。它控制游走者远离当前节点的倾向。如果 $q$ 很高，游走者更可能留在当前的社区；如果 $q$ 很低，他们会跳到其他社区。</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>学习节点表示</strong>：使用随机游走生成的节点序列，通过 Skip-Gram 架构学习每个节点的向量表示。这一部分与 Word2Vec 中的 Skip-Gram 方法类似，其中“单词”是图中的节点，而“上下文”是随机游走过程中的邻近节点。</p>
-  </li>
-</ol>
+<p><img src="/images/STGCN-road_graph.png" alt="道路图网络" title="STGCN-road_graph" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">node2vec</code> 的主要优点是它可以捕捉网络的复杂结构特性，从而为各种下游任务（如节点分类、链接预测和节点聚类）生成有意义的节点表示。</p>
+<h1 id="网络结构总览">网络结构总览</h1>
+<p>论文的网络结构如下图所示。对于构建的道路图网络，输入两个ST-Conv模块后，经过输出层得到用于预测的特征。</p>
 
-<p>如果你对算法的更多细节或实现感兴趣，我可以为你提供更多的信息。</p>
+<p><img src="/images/STGCN-net.png" alt="网络结构" title="STGCN-net" /></p>
 
-<h2 id="进行node2vec需要提供什么信息">进行node2vec需要提供什么信息</h2>
+<p><strong>输入</strong> 与建模的道路图网络结构对应的，模型的输入就是一个4维的特征向量$[batch, time, nodeNum, featChannels]$</p>
 
-<p>要进行 <code class="language-plaintext highlighter-rouge">node2vec</code>，你需要提供以下基本信息：</p>
+<h1 id="st-conv-block时空卷积">ST-Conv block（时空卷积）</h1>
+<p>时空卷积的结构如网络结构图的中间所示，设计为一个三明治的结构，两个时间卷积层夹着一个空间卷积层，然后时间卷积层的输出维度为64，而空间卷积层的输出维度为16，作者认为这种设计：</p>
+<blockquote>
+  <p>“ the spatial layer in the middle is to bridge two temporal layers which can achieve fast spatial-state propagation from graph convolution through temporal convolutions. The “sandwich” structure also helps the network sufficiently apply bottleneck strategy to achieve scale compression and feature squeezing by downscaling and upscaling of channels C through the graph convolutional layer. ”</p>
+</blockquote>
 
-<ol>
-  <li>
-    <p><strong>网络图</strong>：这是算法的主要输入，通常表示为一个无向图或有向图。图中的每个节点代表一个实体，而边代表实体之间的关系。</p>
-  </li>
-  <li>
-    <p><strong>随机游走的参数</strong>：</p>
+<p><strong>门控时间卷积</strong> 顾名思义，就是只在时间维度进行卷积操作的，所以尽管输入是一个4维的，但是卷积核就是一个[K,1,C]这样的一个卷积核。然后在时间维度的卷积后，还会经过一个门控激活函数，结构如网络结构图中最右边所示，更详细的如<a href="https://zhuanlan.zhihu.com/p/286445515">下图</a>所示。</p>
 
-    <ul>
-      <li><strong>游走长度</strong>：每次随机游走应该走多少步。</li>
-      <li><strong>游走次数</strong>：从每个节点开始进行多少次随机游走。</li>
-      <li><strong>返回参数 $p$</strong>：控制随机游走时返回到上一个节点的倾向。</li>
-      <li><strong>外向参数 $q$</strong>：控制随机游走时探索新节点的倾向。</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Embedding 参数</strong>：</p>
+<p>门控激活函数（GLU）的原理就是，给定输入x，将其在channel维度分成两个部分:a和b，然后使用sigmoid函数作用在b上，得到一个值域在 [0, 1] 之间的门控信号。接下来，
+a 与这个门控信号相乘，得到的结果是 GLU 的输出。GLU 的关键思想是，通过使用门控机制，模型可以根据 b 的值来决定a 的哪些部分应该被传递，哪些部分应该被阻止。这使得模型具有更大的灵活性，能够在需要时选择性地更新其信息，GLU能够用于时态卷积，辅助模型捕获数据中的时空依赖关系。</p>
 
-    <ul>
-      <li><strong>维度</strong>：每个节点的向量表示的大小。</li>
-      <li><strong>窗口大小</strong>：在 Skip-Gram 架构中，当从随机游走生成的节点序列中学习节点表示时，应该考虑多少邻近节点作为上下文。</li>
-      <li><strong>学习率</strong>：模型训练的步长。</li>
-      <li><strong>最小样本数</strong>：最小样本数用于过滤那些随机游走次数少于此数值的节点。</li>
-      <li><strong>负采样</strong>：在优化过程中，用于生成负样本的数量。</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>其他可能的参数</strong>：这取决于你使用的特定实现和库。例如，你可能会提供以下参数：</p>
+<p><img src="/images/STGCN-GLU.png" alt="门控激活" title="STGCN-GLU" /></p>
 
-    <ul>
-      <li><strong>工作进程数量</strong>：用于并行处理的 CPU 核心数量。</li>
-      <li><strong>迭代次数</strong>：Skip-Gram 架构的训练迭代次数。</li>
-    </ul>
-  </li>
-</ol>
+<p><strong>空间卷积</strong> 空间卷积就是一个图卷积，用来提取空间关联关系。因为输入是4维的，然后在进行图卷积之前，会对输入进行reshape成$[-1,nodeNum,Channels]$这样的形状然后再进行图卷积。</p>
 
-<p>有了这些信息，你就可以使用 <code class="language-plaintext highlighter-rouge">node2vec</code> 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。</p>
+<p><strong>输出层</strong> 在经过时空卷积之后得到的特征，会再经过一个额外的时间卷积层，得到一个$Z\in R^{n\times c}$大小的输出，这个输出再经过一个全连接层得到每一个节点的多个时间的预测结果，最后损失函数设计为一个MSE损失。</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -190,13 +158,13 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-                        <a href="/content/2023-09-18-BSTAT.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: BSTAT">
+                        <a href="/content/2023-09-19-GCN.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: GCN">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
                     
-                        <a href="/content/2023-09-19-GCN.html" class="navigation navigation-next navigation-unique" aria-label="Next page: GCN">
+                        <a href="/content/2023-09-19-TGCN.html" class="navigation navigation-next navigation-unique" aria-label="Next page: TGCN">
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -213,11 +181,11 @@ MathJax = {
         "depth": 1,
         
         "next": {
-            "title": "GCN",
+            "title": "TGCN",
             "level": "1.2",
             "depth": 1,
-            "path": "_posts/content/2023-09-19-GCN.md",
-            "ref": "_posts/content/2023-09-19-GCN.md",
+            "path": "_posts/content/2023-09-19-TGCN.md",
+            "ref": "_posts/content/2023-09-19-TGCN.md",
             "articles": []
         },
         
@@ -306,8 +274,8 @@ MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/content/2023-09-18-Node2vec.md",
-        "mtime": "2023-09-18 00:00:00 +0800",
+        "path": "_posts/content/2023-09-19-STGCN.md",
+        "mtime": "2023-09-19 00:00:00 +0800",
         "type": "markdown"
     },
     "gitbook": {
