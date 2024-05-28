@@ -223,7 +223,7 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 
 <p>这里就不需要进行特征分解，只需要对拉普拉斯矩阵进行变换，实现将$L^k$计算出来，则可以在前行传播的时候使用，复杂度为$O(Kn^2)$。</p>
 
-<p>同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息</p>
+<p>同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息。</p>
 
 <p>同时，考虑到<strong>任何多项式都可以使用切比雪夫展开式近似（类比函数可以利用泰勒展开进行近似）</strong>，则可以引入切比雪夫多项式的$K$阶截断来获得对$L^K$的近似，进而获得对$g_{\theta}(\Lambda)的近似$：</p>
 
@@ -241,12 +241,12 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 <p>GCN3代在2代的基础上，进行了进一步简化：</p>
 
 <ul>
-  <li>取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核</li>
-  <li>深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可</li>
-  <li>加入参数的约束，如: $\lambda_{max}\approx2$</li>
+  <li>取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核；</li>
+  <li>深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可；</li>
+  <li>加入参数的约束，如: $\lambda_{max}\approx2$。</li>
 </ul>
 
-<p>当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了</p>
+<p>当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了。</p>
 
 <p>进一步假设\(\theta^{\prime}_0 = -\theta^{\prime}_1\)，则此时只有一个参数\(\theta\): \(g_{\theta}^{\prime}*x = \theta(I_n+D^{-1/2}AD^{-1/2})x\)。</p>
 
@@ -254,9 +254,9 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 
 <p>那么最后的形式就是：$g_{\theta}^{\prime}*x = \theta(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2})x$。</p>
 
-<p>考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）</p>
+<p>考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）。</p>
 
-<p>写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)</p>
+<p>写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)。</p>
 
 <h2 id="gcn的数学形式">GCN的数学形式</h2>
 <p>图卷积网络（GCN）的数学形式旨在将节点的特征和图的结构信息结合起来，以获得每个节点的新的特征表示。以下是GCN的基本数学形式：</p>
@@ -498,7 +498,7 @@ MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2023-09-20 11:43:21 +0800"
+        "time": "2024-05-28 17:21:07 +0800"
     },
     "basePath": "",
     "book": {

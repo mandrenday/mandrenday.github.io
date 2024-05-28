@@ -1,5 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2023-09-20T11:43:21+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren’s Blog</title><subtitle>Build Jekyll site with the GitBook style.
-</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">GCN</title><link href="http://localhost:5555/content/2023-09-19-GCN.html" rel="alternate" type="text/html" title="GCN" /><published>2023-09-19T00:00:00+08:00</published><updated>2023-09-19T00:00:00+08:00</updated><id>http://localhost:5555/content/GCN</id><content type="html" xml:base="http://localhost:5555/content/2023-09-19-GCN.html">&lt;h1 id=&quot;gcn&quot;&gt;GCN&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:5555/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5555/" rel="alternate" type="text/html" /><updated>2024-05-28T17:21:07+08:00</updated><id>http://localhost:5555/feed.xml</id><title type="html">Mandren’s Blog</title><subtitle>Build Jekyll site with the GitBook style.
+</subtitle><author><name>Mingkai Qiu</name></author><entry><title type="html">Kitchen-1</title><link href="http://localhost:5555/content/2024-05-28-Daily-english.html" rel="alternate" type="text/html" title="Kitchen-1" /><published>2024-05-28T00:00:00+08:00</published><updated>2024-05-28T00:00:00+08:00</updated><id>http://localhost:5555/content/Daily-english</id><content type="html" xml:base="http://localhost:5555/content/2024-05-28-Daily-english.html">&lt;h1 id=&quot;daily-life-objects-in-the-kitchen&quot;&gt;Daily Life Objects in the Kitchen&lt;/h1&gt;
+
+&lt;h2 id=&quot;situation-in-the-kitchen&quot;&gt;Situation: In the Kitchen&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-refrigerator&quot;&gt;1. Refrigerator&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; “Please put the milk back in the refrigerator.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; “请把牛奶放回冰箱。”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Refrigerator (rəˈfrɪʤəˌreɪtər): 冰箱&lt;/li&gt;
+      &lt;li&gt;Milk (mɪlk): 牛奶&lt;/li&gt;
+      &lt;li&gt;Put back (pʊt bæk): 放回&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-microwave&quot;&gt;2. Microwave&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; “You can heat the leftovers in the microwave.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; “你可以用微波炉加热剩饭。”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Microwave (ˈmaɪkroʊˌweɪv): 微波炉&lt;/li&gt;
+      &lt;li&gt;Heat (hiːt): 加热&lt;/li&gt;
+      &lt;li&gt;Leftovers (ˈlɛftˌoʊvərz): 剩饭&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-blender&quot;&gt;3. Blender&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; “Can you blend the fruits in the blender for a smoothie?”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; “你能用搅拌机搅拌水果做奶昔吗？”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Blender (ˈblɛndər): 搅拌机&lt;/li&gt;
+      &lt;li&gt;Fruits (fruːts): 水果&lt;/li&gt;
+      &lt;li&gt;Smoothie (ˈsmuːði): 奶昔&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-stove&quot;&gt;4. Stove&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; “I’m cooking pasta on the stove.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; “我在炉子上煮意大利面。”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Stove (stoʊv): 炉子&lt;/li&gt;
+      &lt;li&gt;Cooking (ˈkʊkɪŋ): 煮&lt;/li&gt;
+      &lt;li&gt;Pasta (ˈpɑːstə): 意大利面&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-cutting-board&quot;&gt;5. Cutting Board&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Usage:&lt;/strong&gt; “Chop the vegetables on the cutting board.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; “在切菜板上切菜。”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Cutting Board (ˈkʌtɪŋ bɔrd): 切菜板&lt;/li&gt;
+      &lt;li&gt;Chop (ʧɑp): 切&lt;/li&gt;
+      &lt;li&gt;Vegetables (ˈvɛʤtəbəlz): 蔬菜&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">Daily Life Objects in the Kitchen</summary></entry><entry><title type="html">News-240528</title><link href="http://localhost:5555/content/2024-05-28-News.html" rel="alternate" type="text/html" title="News-240528" /><published>2024-05-28T00:00:00+08:00</published><updated>2024-05-28T00:00:00+08:00</updated><id>http://localhost:5555/content/News</id><content type="html" xml:base="http://localhost:5555/content/2024-05-28-News.html">&lt;h1 id=&quot;latest-international-news---may-28-2024&quot;&gt;Latest International News - May 28, 2024&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-un-condemns-israeli-strike-on-rafah-camp&quot;&gt;1. UN Condemns Israeli Strike on Rafah Camp&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; The United Nations has condemned an Israeli airstrike on the Al Hashash area in Rafah, Gaza, which killed 45 people. This strike has led to widespread international condemnation (&lt;a href=&quot;https://www.hindustantimes.com/world-news&quot;&gt;Source 1&lt;/a&gt;, &lt;a href=&quot;https://www.livemint.com&quot;&gt;Source 2&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 联合国谴责以色列对加沙拉法营地的空袭，该袭击造成45人死亡，引发广泛的国际谴责。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Condemns (kənˈdɛm): 谴责&lt;/li&gt;
+      &lt;li&gt;Airstrike (ˈɛərˌstraɪk): 空袭&lt;/li&gt;
+      &lt;li&gt;Widespread (ˈwaɪdˌsprɛd): 广泛的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-north-korea-rocket-explosion&quot;&gt;2. North Korea Rocket Explosion&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; A North Korean rocket exploded mid-flight, dealing a significant blow to Kim Jong-un’s plans for satellite launches (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 朝鲜一枚火箭在飞行中爆炸，对金正恩的卫星发射计划造成重大打击。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Explosion (ɪkˈsploʊʒən): 爆炸&lt;/li&gt;
+      &lt;li&gt;Significant (sɪɡˈnɪfɪkənt): 重大的&lt;/li&gt;
+      &lt;li&gt;Satellite (ˈsætəlˌaɪt): 卫星&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-russia-to-remove-taliban-from-terrorist-list&quot;&gt;3. Russia to Remove Taliban from Terrorist List&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; Russia has decided to remove the Taliban from its list of banned terrorist organizations, strengthening its relations with Afghanistan despite international sanctions (&lt;a href=&quot;https://www.hindustantimes.com/world-news&quot;&gt;Source 1&lt;/a&gt;, &lt;a href=&quot;https://www.livemint.com&quot;&gt;Source 2&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 俄罗斯决定将塔利班从其禁止的恐怖组织名单中删除，尽管国际制裁加强了与阿富汗的关系。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Remove (rɪˈmuv): 删除&lt;/li&gt;
+      &lt;li&gt;Banned (bænd): 被禁止的&lt;/li&gt;
+      &lt;li&gt;Sanctions (ˈsæŋkʃənz): 制裁&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-chinas-falling-emissions&quot;&gt;4. China’s Falling Emissions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; China’s carbon emissions have significantly decreased, indicating that the country may have reached its peak carbon emissions earlier than expected (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 中国的碳排放量显著下降，表明该国可能比预期更早达到碳排放峰值。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Emissions (ɪˈmɪʃənz): 排放&lt;/li&gt;
+      &lt;li&gt;Significantly (sɪɡˈnɪfɪkəntli): 显著地&lt;/li&gt;
+      &lt;li&gt;Peak (pik): 高峰&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-abn-amro-acquires-german-bank&quot;&gt;5. ABN Amro Acquires German Bank&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; Dutch bank ABN Amro has acquired the German bank Hauck &amp;amp; Aufhäuser from China’s Fosun (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 荷兰银行ABN Amro从中国的复星集团收购了德国银行Hauck &amp;amp; Aufhäuser。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Acquires (əˈkwaɪərz): 收购&lt;/li&gt;
+      &lt;li&gt;Bank (bæŋk): 银行&lt;/li&gt;
+      &lt;li&gt;German (ˈdʒɜrmən): 德国的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-earthquake-in-tonga&quot;&gt;6. Earthquake in Tonga&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; A 6.6 magnitude earthquake hit Tonga today, though no tsunami warnings have been issued (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 今天汤加发生了6.6级地震，但没有发布海啸警报。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Earthquake (ˈɜrθˌkweɪk): 地震&lt;/li&gt;
+      &lt;li&gt;Magnitude (ˈmæɡnɪˌtud): 震级&lt;/li&gt;
+      &lt;li&gt;Tsunami (tsuˈnɑmi): 海啸&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-papua-new-guinea-landslide&quot;&gt;7. Papua New Guinea Landslide&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; More than 2,000 people have been buried in a landslide in Papua New Guinea, resulting in significant casualties (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 巴布亚新几内亚发生山体滑坡，超过2000人被掩埋，造成重大伤亡。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Landslide (ˈlændˌslaɪd): 山体滑坡&lt;/li&gt;
+      &lt;li&gt;Buried (ˈbɛrid): 被掩埋的&lt;/li&gt;
+      &lt;li&gt;Casualties (ˈkæʒʊəltiz): 伤亡&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-china-japan-south-korea-summit&quot;&gt;8. China, Japan, South Korea Summit&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; China, Japan, and South Korea have commenced their first summit talks since 2019 to address regional issues (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 中国、日本和韩国自2019年以来首次举行峰会，讨论地区问题。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Summit (ˈsʌmɪt): 峰会&lt;/li&gt;
+      &lt;li&gt;Talks (tɔks): 会谈&lt;/li&gt;
+      &lt;li&gt;Regional (ˈridʒənl): 地区的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-israel-airstrike-tensions&quot;&gt;9. Israel Airstrike Tensions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; An Israeli airstrike on a refugee camp in Gaza killed 35 people, including children, heightening tensions in the region (&lt;a href=&quot;https://www.hindustantimes.com/world-news&quot;&gt;Source 1&lt;/a&gt;, &lt;a href=&quot;https://www.livemint.com&quot;&gt;Source 2&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 以色列对加沙一难民营的空袭造成35人死亡，包括儿童，导致该地区紧张局势加剧。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Refugee (ˈrɛfjʊˌdʒi): 难民&lt;/li&gt;
+      &lt;li&gt;Including (ɪnˈkludɪŋ): 包括&lt;/li&gt;
+      &lt;li&gt;Tensions (ˈtɛnʃənz): 紧张局势&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-trumps-legal-battles&quot;&gt;10. Trump’s Legal Battles&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Details:&lt;/strong&gt; Former US President Donald Trump is engaged in significant legal battles, with his defense presenting starkly contrasting arguments in two separate cases (&lt;a href=&quot;https://www.livemint.com&quot;&gt;Source&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation:&lt;/strong&gt; 前美国总统唐纳德·特朗普正在进行重要的法律斗争，其辩护在两个不同的案件中提出了截然不同的论点。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Words Translation:&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Engaged (ɪnˈɡeɪdʒd): 进行&lt;/li&gt;
+      &lt;li&gt;Legal (ˈliɡəl): 法律的&lt;/li&gt;
+      &lt;li&gt;Contrasting (ˈkɑntræstɪŋ): 截然不同的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">Latest International News - May 28, 2024</summary></entry><entry><title type="html">GCN</title><link href="http://localhost:5555/content/2023-09-19-GCN.html" rel="alternate" type="text/html" title="GCN" /><published>2023-09-19T00:00:00+08:00</published><updated>2023-09-19T00:00:00+08:00</updated><id>http://localhost:5555/content/GCN</id><content type="html" xml:base="http://localhost:5555/content/2023-09-19-GCN.html">&lt;h1 id=&quot;gcn&quot;&gt;GCN&lt;/h1&gt;
 
 &lt;h2 id=&quot;gnn&quot;&gt;GNN&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -126,7 +323,7 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 
 &lt;p&gt;这里就不需要进行特征分解，只需要对拉普拉斯矩阵进行变换，实现将$L^k$计算出来，则可以在前行传播的时候使用，复杂度为$O(Kn^2)$。&lt;/p&gt;
 
-&lt;p&gt;同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息&lt;/p&gt;
+&lt;p&gt;同时，由于矩阵的k次方可以求连通性，也就是假设给定一个矩阵表示邻接关系，则矩阵的k次方后，非零元素就表示对应的$i,j$点在k次内可达，也就是$L$矩阵的$k$次方的含义就表示了$k-hop$之内的节点，也就是$k$次方使得节点的更新只用到了节点的$K$-Localized信息。&lt;/p&gt;
 
 &lt;p&gt;同时，考虑到&lt;strong&gt;任何多项式都可以使用切比雪夫展开式近似（类比函数可以利用泰勒展开进行近似）&lt;/strong&gt;，则可以引入切比雪夫多项式的$K$阶截断来获得对$L^K$的近似，进而获得对$g_{\theta}(\Lambda)的近似$：&lt;/p&gt;
 
@@ -144,12 +341,12 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 &lt;p&gt;GCN3代在2代的基础上，进行了进一步简化：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核&lt;/li&gt;
-  &lt;li&gt;深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可&lt;/li&gt;
-  &lt;li&gt;加入参数的约束，如: $\lambda_{max}\approx2$&lt;/li&gt;
+  &lt;li&gt;取K=1，此时模型是1阶近似，即每层卷积层只考虑了直接邻域，相当于CNN中$3*3$的卷积核；&lt;/li&gt;
+  &lt;li&gt;深度加深，宽度减少，如果要建立多阶近似，只需要使用多个层即可；&lt;/li&gt;
+  &lt;li&gt;加入参数的约束，如: $\lambda_{max}\approx2$。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了&lt;/p&gt;
+&lt;p&gt;当$\lambda_{max}=2， K=1$时，原始公式变成：$g_{\theta}^{\prime}*x\approx \theta_0^{\prime}x + \theta_1^{\prime}\tilde{L}x = \theta_0^{\prime}x + \theta_1^{\prime}(L-I_n)x = \theta_0^{\prime}x - \theta_1^{\prime}(D^{-1/2}AD^{-1/2})x$，这里是利用了归一化拉普拉斯矩阵$L = D^{-1/2}(D-A)D^{-1/2} = I_n - D^{-1/2}AD^{-1/2}$，$A$是邻接矩阵，此时就只有两个参数了。&lt;/p&gt;
 
 &lt;p&gt;进一步假设\(\theta^{\prime}_0 = -\theta^{\prime}_1\)，则此时只有一个参数\(\theta\): \(g_{\theta}^{\prime}*x = \theta(I_n+D^{-1/2}AD^{-1/2})x\)。&lt;/p&gt;
 
@@ -157,9 +354,9 @@ $\hat{L} = I - D^{-\frac{1}{2}} A D^{-\frac{1}{2}}$
 
 &lt;p&gt;那么最后的形式就是：$g_{\theta}^{\prime}*x = \theta(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2})x$。&lt;/p&gt;
 
-&lt;p&gt;考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）&lt;/p&gt;
+&lt;p&gt;考虑多通道多卷积核（也就是$x\in R^{N\times 1}$变成$X\in R^{N\times C}$,卷积核从$\theta\in R$变成$\theta\in R^{C\times F}$，$C$为通道数，$F$为卷积核数量）。&lt;/p&gt;
 
-&lt;p&gt;写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)&lt;/p&gt;
+&lt;p&gt;写成矩阵形式变成：$Z = \tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}X\Theta$ (其中$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}\in R^{N\times N}, X\in R^{N\times C}, \Theta\in R^{C\times F}$,最后输出$Z\in R^{N\times F}$,也就是卷积结果的维数等于卷积核的数量)。&lt;/p&gt;
 
 &lt;h2 id=&quot;gcn的数学形式&quot;&gt;GCN的数学形式&lt;/h2&gt;
 &lt;p&gt;图卷积网络（GCN）的数学形式旨在将节点的特征和图的结构信息结合起来，以获得每个节点的新的特征表示。以下是GCN的基本数学形式：&lt;/p&gt;
@@ -432,72 +629,7 @@ a 与这个门控信号相乘，得到的结果是 GLU 的输出。GLU 的关键
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;有了这些信息，你就可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node2vec&lt;/code&gt; 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">node2vec 介绍node2vec算法</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/tool/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/tool/content</id><content type="html" xml:base="http://localhost:5555/tool/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="tool" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/paper/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/paper/content</id><content type="html" xml:base="http://localhost:5555/paper/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-BSTAT.html&quot;&gt;BSTAT&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-STGCN.html&quot;&gt;STGCN&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;IJCAI2018&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-TGCN.html&quot;&gt;TGCN&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS, 2020&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="paper" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/learning/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/learning/content</id><content type="html" xml:base="http://localhost:5555/learning/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Title&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-08-24-Label-Propagation.html&quot;&gt;Label Propagation&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-Node2vec.html&quot;&gt;Node2vec&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-GCN.html&quot;&gt;GCN&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;_&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="learning" /><summary type="html">Content</summary></entry><entry><title type="html">Label Propagation</title><link href="http://localhost:5555/content/2023-08-24-Label-Propagation.html" rel="alternate" type="text/html" title="Label Propagation" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/content/Label-Propagation</id><content type="html" xml:base="http://localhost:5555/content/2023-08-24-Label-Propagation.html">&lt;blockquote&gt;
+&lt;p&gt;有了这些信息，你就可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node2vec&lt;/code&gt; 算法生成图中每个节点的向量表示了。这些表示可以用于各种图分析任务，如节点分类、链接预测和社区检测。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">node2vec 介绍node2vec算法</summary></entry><entry><title type="html">Label Propagation</title><link href="http://localhost:5555/content/2023-08-24-Label-Propagation.html" rel="alternate" type="text/html" title="Label Propagation" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/content/Label-Propagation</id><content type="html" xml:base="http://localhost:5555/content/2023-08-24-Label-Propagation.html">&lt;blockquote&gt;
   &lt;p&gt;/language Chinese&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1110,1286 +1242,42 @@ a 与这个门控信号相乘，得到的结果是 GLU 的输出。GLU 的关键
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;行为模式的分析可以为目标重识别提供非常有价值的上下文信息，帮助我们更准确地识别目标。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry><entry><title type="html">Markov</title><link href="http://localhost:5555/content/2023-08-23-Markov.html" rel="alternate" type="text/html" title="Markov" /><published>2023-08-23T00:00:00+08:00</published><updated>2023-08-23T00:00:00+08:00</updated><id>http://localhost:5555/content/Markov</id><content type="html" xml:base="http://localhost:5555/content/2023-08-23-Markov.html">&lt;blockquote&gt;
-  &lt;p&gt;/language Chinese&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的！从现在开始，我会用中文和你交流。🦌&lt;/p&gt;
-
-&lt;p&gt;请告诉我你想做什么，或者使用任何其他命令来开始我们的学习之旅！📚&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我希望学习马尔科夫链&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;很好！马尔科夫链是一个非常有趣和实用的主题。📊🦌&lt;/p&gt;
-
-&lt;p&gt;首先，我会为你规划一个关于马尔科夫链的课程大纲。请稍等片刻，我会为你准备好。&lt;/p&gt;
-
-&lt;p&gt;执行 &lt;Curriculum&gt; 话题: &quot;马尔科夫链&quot;&lt;/Curriculum&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;Curriculum&gt; 话题: &quot;马尔科夫链&quot;
-&lt;/Curriculum&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，让我为你设计一个关于马尔科夫链的课程大纲。请稍等片刻，我会为你准备好。🦌📝&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;先修课程&quot;&gt;先修课程&lt;/h1&gt;
-
-&lt;p&gt;0.1 概率论基础：了解基本的概率概念和概率的性质。&lt;/p&gt;
-
-&lt;p&gt;0.2 随机过程简介：理解什么是随机过程以及其基本特点。&lt;/p&gt;
-
-&lt;p&gt;0.3 状态和状态转移：介绍状态的概念以及如何从一个状态转移到另一个状态。&lt;/p&gt;
-
-&lt;p&gt;0.4 矩阵和矩阵运算：因为马尔科夫链的计算涉及到矩阵运算，所以需要对此有所了解。&lt;/p&gt;
-
-&lt;p&gt;0.5 稳态和平稳分布：介绍平稳分布的概念以及如何计算。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;主要课程&quot;&gt;主要课程&lt;/h1&gt;
-
-&lt;p&gt;1.1 马尔科夫链简介：解释什么是马尔科夫链以及其历史和重要性。&lt;/p&gt;
-
-&lt;p&gt;1.2 状态转移矩阵：介绍如何使用矩阵表示状态之间的转移概率。&lt;/p&gt;
-
-&lt;p&gt;1.3 马尔科夫性质：讨论马尔科夫链的基本性质，特别是“无记忆性”。&lt;/p&gt;
-
-&lt;p&gt;1.4 收敛性和稳态分布：学习马尔科夫链如何达到稳态分布以及其意义。&lt;/p&gt;
-
-&lt;p&gt;1.5 马尔科夫链的应用：探索马尔科夫链在现实生活中的应用，例如天气预报、经济模型等。&lt;/p&gt;
-
-&lt;p&gt;1.6 高级主题：如连续时间马尔科夫链和隐藏马尔科夫模型等。&lt;/p&gt;
-
-&lt;p&gt;1.7 评估与复习：对所学的内容进行评估和&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，让我们开始深入了解马尔科夫链！📚🦌&lt;/p&gt;
-
-&lt;p&gt;执行 &lt;Lesson&gt; 话题: &quot;1.1 马尔科夫链简介&quot;&lt;/Lesson&gt;&lt;/p&gt;
-
-&lt;p&gt;谢谢你的耐心等待！🦌&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;话题&lt;/strong&gt;: 1.1 马尔科夫链简介&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 马尔科夫链是随机过程的一种，它具有一个特定的“无记忆性”。这意味着系统的下一个状态只取决于其当前状态，而与它之前的状态无关。因此，马尔科夫链的未来状态只与当前状态有关，与它如何到达当前状态无关。&lt;/p&gt;
-
-&lt;p&gt;例如，想象一下一个晴雨表：如果今天是晴天，明天是雨天的概率可能是40%，是晴天的概率是60%。这个概率只取决于今天的天气，而与前一天或前几天的天气无关。&lt;/p&gt;
-
-&lt;p&gt;这种“无记忆性”是马尔科夫链的核心特性，也是它在各种领域如此有用的原因之一。&lt;/p&gt;
-
-&lt;p&gt;🤔 你知道马尔科夫链是如何得名的吗？&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在继续前，我想知道你是否有关于马尔科夫链简介的问题，或者你希望更深入地了解某个方面？&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续深入了解马尔科夫链。🦌&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-12-状态转移矩阵&quot;&gt;话题: 1.2 状态转移矩阵&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 状态转移矩阵是马尔科夫链的核心组成部分。它提供了一个方便的方式来表示和计算从一个状态到另一个状态的概率。&lt;/p&gt;
-
-&lt;p&gt;考虑一个简单的例子：我们有一个两状态的马尔科夫链，状态A和状态B。我们可以使用一个2x2的矩阵来表示从一个状态到另一个状态的转移概率。&lt;/p&gt;
-
-&lt;p&gt;假设从状态A到状态A的概率是0.7，从状态A到状态B的概率是0.3。同样，从状态B到状态A的概率是0.4，从状态B到状态B的概率是0.6。那么，转移矩阵为：&lt;/p&gt;
-
-\[\begin{bmatrix}
-0.7 &amp;amp; 0.3 \\\\
-0.4 &amp;amp; 0.6 \\\\
-\end{bmatrix}\]
-
-&lt;p&gt;这个矩阵的第一行告诉我们从状态A转移到其他状态的概率，而第二行告诉我们从状态B转移到其他状态的概率。&lt;/p&gt;
-
-&lt;p&gt;为了确定系统在经过多个时间步后的状态，我们可以多次应用这个转移矩阵。每次应用这个矩阵都会给我们一个新的状态分布。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在我们继续之前，你有关于状态转移矩阵或这个例子的问题吗？或者你想进行一些实际的计算或模拟来更好地理解这个概念吗？🤓&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续前进！🦌&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-13-马尔科夫性质&quot;&gt;话题: 1.3 马尔科夫性质&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 马尔科夫性质是马尔科夫链的一个核心特点。正如我们之前提到的，它意味着链的未来状态只与当前状态有关，而与之前的状态无关。&lt;/p&gt;
-
-&lt;p&gt;为了形式化这一点，我们可以说：给定当前状态 $X_n$​，未来状态 $X_{n+1}$​ 的条件概率分布与之前的状态无关。数学上，这可以表示为：&lt;/p&gt;
-
-\[P(X_{n+1} = x_{n+1} | X_n = x_n, X_{n-1} = x_{n-1}, ... , X_1 = x_1) = P(X_{n+1} = x_{n+1} | X_n = x_n)\]
-
-&lt;p&gt;这一性质为我们提供了一个强大的工具，因为它简化了许多计算。特别是，它允许我们使用状态转移矩阵来描述和计算整个系统的行为，而无需关心系统如何达到其当前状态的。&lt;/p&gt;
-
-&lt;p&gt;马尔科夫链在许多领域都有应用，包括统计物理、经济、生态学、计算机科学和许多其他领域。它们是研究随机过程的基础工具，特别是当过程具有马尔科夫性质时。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在我们继续之前，你有关于马尔科夫性质的问题吗？或者你想要看到一个具体的应用示例，以更好地理解这一概念吗？📚&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请以pagerank为例介绍这一性质&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;3 / 3&lt;/p&gt;
-
-&lt;p&gt;当然可以！Pagerank 算法是一个非常好的例子，用于说明马尔科夫链和马尔科夫性质的实际应用。🦌🔗&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-pagerank-与-马尔科夫性质&quot;&gt;话题: Pagerank 与 马尔科夫性质&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;Pagerank 简介&lt;/strong&gt;: Pagerank 是 Google 的创始人 Larry Page 和 Sergey Brin 在斯坦福大学时开发的。它是 Google 搜索引擎的背后的核心算法之一，用于确定网页的重要性或排名。&lt;/p&gt;
-
-&lt;p&gt;Pagerank 的基本想法是，一个网页的重要性可以通过查看链接到它的其他网页来判断。如果一个非常重要的网页链接到另一个网页，那么被链接的网页也可能很重要。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;马尔科夫链与 Pagerank&lt;/strong&gt;: Pagerank 可以看作是一个马尔科夫链的稳态分布。每个网页都是链中的一个状态，而从一个页面到另一个页面的转移概率取决于第一个页面上的出站链接的数量。&lt;/p&gt;
-
-&lt;p&gt;考虑一个简单的互联网，其中只有三个页面 A、B 和 C。假设 A 链接到 B 和 C，B 只链接到 A，而 C 链接到 A。这会形成一个马尔科夫链，其中的转移概率是基于链接结构的。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;马尔科夫性质在 Pagerank 中的应用&lt;/strong&gt;: 当用户随机浏览网页时，他们会按照某个页面上的链接结构从一个页面跳转到另一个页面。在这个过程中，他们实际上是在遵循一个马尔科夫过程，因为他们在每一步都只考虑当前的页面，而不考虑他们之前访问过的页面。这就是马尔科夫性质的体现。&lt;/p&gt;
-
-&lt;p&gt;随着时间的推移，用户访问每个页面的概率将达到一个稳定的分布，这就是 Pagerank 值。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在我们继续深入探讨 Pagerank 的计算方法之前，你对上面的内容有什么问题吗？或者你想要了解更多关于 Pagerank 或其与马尔科夫链的关系的细节吗？🤔&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续探讨 PageRank 和其计算方法。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-pagerank-的计算方法&quot;&gt;话题: PageRank 的计算方法&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;转移矩阵&lt;/strong&gt;: 首先，我们需要根据网站之间的链接关系建立一个转移矩阵。这个矩阵的每个元素 $M_{ij}$​ 代表从页面 $i$ 跳转到页面 $j$ 的概率。&lt;/p&gt;
-
-&lt;p&gt;例如，如果页面 A 有两个出站链接（指向 B 和 C），那么从 A 跳转到 B 或 C 的概率都是 0.5。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;随机浏览因子&lt;/strong&gt;: 为了防止某些页面由于没有出站链接而永远不被访问，PageRank 引入了一个称为随机浏览因子（或阻尼因子）的概念。这意味着有一个小概率（通常设为 0.15），用户会随机选择一个页面，而不是按照当前页面的链接结构。&lt;/p&gt;
-
-&lt;p&gt;这也有助于确保马尔科夫链是遍历的，这意味着从任何页面开始，最终都可以到达任何其他页面。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;计算 PageRank&lt;/strong&gt;: PageRank 值是转移矩阵的主要特征向量对应的稳态分布。我们可以通过多次应用转移矩阵来迭代地计算这个分布，直到 PageRank 值收敛。&lt;/p&gt;
-
-&lt;p&gt;具体来说，我们开始时为每个页面分配一个等概率的 PageRank 值，然后反复应用转移矩阵，直到 PageRank 值几乎不再变化。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;最终的 PageRank 公式&lt;/strong&gt;: 
-\(PR(p) = (1 - d) + d \times \sum_{i \in \text{inbound pages}} \frac{PR(i)}{L(i)}\)
-其中，$PR(p)$ 是页面 $p$ 的 PageRank 值，$d$ 是阻尼因子，$L(i)$ 是页面 $i$ 的出站链接数。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;现在你知道了 PageRank 是如何计算的，以及它如何使用马尔科夫链的概念。你有关于这个计算方法或 PageRank 的其他方面的问题吗？或者你想要看到一个具体的计算示例吗？📚🤓&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;解释这个最终的PageRank公式的含义&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！这个公式是 PageRank 算法的核心，我们来深入地解释一下它的含义。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-\[PR(p) = (1 - d) + d \times \sum_{i \in \text{inbound pages}} \frac{PR(i)}{L(i)}\]
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;1. $PR(p)$&lt;/strong&gt;: 这表示页面 $p$ 的 PageRank 值。它是一个衡量页面重要性的数字。这个值是根据页面的入站链接（其他页面链接到此页面的链接）和这些入站链接页面的 PageRank 值来计算的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. $(1 - d)$&lt;/strong&gt;: 这是一个基础值，其中 $d$ 是阻尼因子。通常，阻尼因子 $d$ 的值为 0.85。这意味着有 85% 的概率，用户会按照页面的链接结构进行跳转，而有 15% 的概率，用户会随机选择一个页面。因此，$(1 - d)$ 就是用户随机选择一个页面的概率。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. $d \times \sum_{i \in \text{inbound pages}} \frac{PR(i)}{L(i)}$​&lt;/strong&gt;: 这部分是基于页面的入站链接来计算的。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;$\sum_{i \in \text{inbound pages}}$​: 这是一个求和符号，表示对所有链接到页面 ppp 的页面 iii 进行总和。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$PR(i)$: 这是链接到页面 $p$ 的页面 $i$ 的 PageRank 值。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$L(i)$: 这是页面 $i$ 的出站链接数。这表示页面 $i$ 的 PageRank 值是如何在其所有出站链接之间分配的。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这部分的意思是，页面 $p$ 的 PageRank 值是基于链接到它的所有页面的 PageRank 值和这些页面的出站链接数来计算的。这反映了一个简单的观点：一个页面的重要性部分地来自于链接到它的其他页面的重要性。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;总之，PageRank 公式基于一个简单的原理：重要的页面会被许多其他重要的页面链接。这个公式结合了随机浏览的概念（即用户随机选择一个页面）和基于链接结构的浏览（即用户按照页面的链接进行跳转）。&lt;/p&gt;
-
-&lt;p&gt;你对这个解释有什么问题吗？或者还有其他方面你想了解的吗？🤔📚&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续马尔科夫链的教程&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续马尔科夫链的内容。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-14-稳态分布&quot;&gt;话题: 1.4 稳态分布&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;稳态分布简介&lt;/strong&gt;: 当马尔科夫链运行足够长的时间后，它将达到一个稳定的状态，其中每个状态的概率不再改变。这称为稳态分布或稳定分布。在这种分布下，链的当前状态的概率分布不会随着时间而改变。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;为什么稳态分布重要?&lt;/strong&gt; 稳态分布为我们提供了一个非常有用的工具，因为它可以告诉我们长期内链的各个状态的平均行为。例如，如果我们知道一个天气模型的稳态分布，我们可以预测一个特定城市的平均雨天或晴天的天数。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;如何计算稳态分布?&lt;/strong&gt; 稳态分布可以通过多次应用转移矩阵来找到。当概率分布不再显著变化时，我们知道已经达到了稳态分布。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;稳态分布的性质&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;稳态分布是唯一的。&lt;/li&gt;
-  &lt;li&gt;任何初始分布，只要马尔科夫链是遍历的和非周期性的，最终都会收敛到同一个稳态分布。&lt;/li&gt;
-  &lt;li&gt;在稳态分布下，从任何状态转移到其他状态的概率都是固定的。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;在我们继续探讨如何从实际应用中使用马尔科夫链和其它高级主题之前，你对稳态分布有什么问题吗？或者你想要看到一个具体的计算示例吗？🤓📘&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请具体解释“马尔科夫链是遍历的和非周期性的”以及“在稳态分布下，从任何状态转移到其他状态的概率都是固定的。”是什么意思&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！让我们深入探讨这些概念。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;1. 遍历 (Ergodicity)&lt;/strong&gt; 一个马尔科夫链被称为遍历的（或 ergodic），如果从任何状态开始，最终都有可能到达任何其他状态。换句话说，没有任何状态是完全孤立的或永久不可达的。&lt;/p&gt;
-
-&lt;p&gt;例如，考虑一个简单的天气模型，其中有两个状态：晴天和雨天。如果一个晴天后永远不会下雨，那么这个链就不是遍历的。但如果晴天后可能下雨，且雨天后也可能放晴，那么这个链就是遍历的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. 非周期性 (Aperiodicity)&lt;/strong&gt; 一个状态是周期性的，如果你从该状态出发，返回到该状态的次数总是某个固定的周期，例如每2次或每3次。如果一个状态不是周期性的，我们称之为非周期性的。&lt;/p&gt;
-
-&lt;p&gt;例如，如果每一个晴天后都是一个雨天，然后再是一个晴天，然后再是一个雨天，如此往复，那么这个链是有周期性的，周期为2。但如果天气是随机的，那么这个链就是非周期性的。&lt;/p&gt;
-
-&lt;p&gt;对于马尔科夫链来说，如果其所有状态都是非周期性的，那么该链就是非周期性的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. 在稳态分布下，从任何状态转移到其他状态的概率都是固定的&lt;/strong&gt; 这意味着，一旦马尔科夫链达到其稳态分布，每个状态的概率不再改变。这不是说链的状态不会改变，而是说从一个状态转移到另一个状态的概率是恒定的，不会因为时间的推移而变化。&lt;/p&gt;
-
-&lt;p&gt;例如，考虑前面提到的天气模型。在稳态分布下，从晴天转到雨天的概率可能是0.3，从雨天转到晴天的概率可能是0.5。这些概率在稳态分布下是恒定的，不会随时间变化。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这些概念是理解马尔科夫链和它如何工作的关键。你对这些解释有什么问题吗？或者你还有其他方面想了解的吗？📚🤔&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续探讨马尔科夫链的内容。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-15-状态分类&quot;&gt;话题: 1.5 状态分类&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;🦌 当我们研究马尔科夫链时，了解链中各个状态的性质和分类是很有帮助的。以下是一些关于状态的基本分类：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. 可达性 (Accessibility)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果从状态 $i$ 可以在有限步骤内到达状态 $j$，则我们说状态 $j$ 是从状态 $i$ 可达的。&lt;/li&gt;
-  &lt;li&gt;符号表示为：$i \rightarrow j$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2. 互通性 (Communicability)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果状态 $i$ 可以到达状态 $j$，并且状态 $j$ 也可以到达状态 $i$，则我们说状态 $i$ 和状态 $j$ 是互通的。&lt;/li&gt;
-  &lt;li&gt;符号表示为：$i \leftrightarrow j$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3. 闭合集 (Closed Set)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果从一个状态集合内的任何状态到达集合外的状态的概率为0，那么这个集合就被称为闭合集。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 不可约链 (Irreducibility)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果一个马尔科夫链中的所有状态都是互通的，那么这个链被称为不可约的。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;5. 常返状态和暂时状态 (Recurrent and Transient States)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果从一个状态开始，返回到这个状态的概率为1，那么这个状态被称为常返状态。&lt;/li&gt;
-  &lt;li&gt;如果从一个状态开始，返回到这个状态的概率小于1，那么这个状态被称为暂时状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;6. 正常返状态 (Positive Recurrent)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果一个常返状态的平均返回时间是有限的，那么这个状态被称为正常返状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;以上是关于马尔科夫链中状态的基本分类和性质。这些概念为我们提供了一个框架，帮助我们理解链的行为和其长期稳态分布。&lt;/p&gt;
-
-&lt;p&gt;在我们继续探讨其他高级主题之前，你对上面的内容有什么问题吗？或者你想要看到一个具体的示例或应用吗？🤔📚&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请提供具体的示例&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！让我们使用一个简单的马尔科夫链模型来演示上面提到的状态分类概念。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;示例：天气模型&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;考虑一个简单的天气模型，其中有三个状态：晴天 (S)、雨天 (R) 和多云 (C)。我们可以使用以下的转移矩阵来描述从一个状态到另一个状态的转移概率：&lt;/p&gt;
-
-\[\begin{array}{c|ccc}
- &amp;amp; S &amp;amp; R &amp;amp; C \\\\
-\hline
-S &amp;amp; 0.6 &amp;amp; 0.3 &amp;amp; 0.1 \\\\
-R &amp;amp; 0.4 &amp;amp; 0.4 &amp;amp; 0.2 \\\\
-C &amp;amp; 0.2 &amp;amp; 0.3 &amp;amp; 0.5 \\\\
-\end{array}\]
-
-&lt;p&gt;这个矩阵告诉我们，例如，从晴天 (S) 转到雨天 (R) 的概率是 0.3，从多云 (C) 转到晴天 (S) 的概率是 0.2。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. 可达性&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;从状态 S，我们可以在一步内到达状态 R 和状态 C。因此，状态 R 和 C 都是从状态 S 可达的。&lt;/li&gt;
-  &lt;li&gt;同样，从 R 和 C，我们都可以到达 S。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2. 互通性&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;从上面的转移矩阵，我们可以看到，任何两个状态之间都有非零的转移概率，因此所有的状态都是互通的。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3. 闭合集&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;这个模型没有闭合集，因为没有任何状态集合从中不能到达其他状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 不可约链&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;因为所有状态都是互通的，所以这个链是不可约的。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;5. 常返状态和暂时状态&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;在这个简单模型中，所有的状态都是常返的，因为从任何状态开始，最终都有可能返回到这个状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;6. 正常返状态&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;由于所有状态都是常返的，并且平均返回时间是有限的，因此所有状态都是正常返状态。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是一个简单的马尔科夫链模型的示例，用于说明状态分类的概念。你对这个示例有什么问题吗？或者还有其他方面你想了解的吗？📚🤔&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续深入探讨马尔科夫链的高级概念。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-16-吸收状态&quot;&gt;话题: 1.6 吸收状态&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;吸收状态简介&lt;/strong&gt;: 吸收状态是一种特殊的马尔科夫链状态，一旦进入这种状态，就不可能离开。换句话说，从吸收状态到自己的转移概率是1，而到任何其他状态的转移概率都是0。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;为什么吸收状态重要?&lt;/strong&gt; 在某些马尔科夫链模型中，例如可靠性分析或随机过程中的终止事件，吸收状态可以代表某种最终状态或结果，例如设备的故障或项目的完成。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如何识别吸收状态?&lt;/strong&gt; 在转移矩阵中，如果某一行的对角线元素为1，且该行的所有其他元素都为0，那么这个状态就是吸收状态。&lt;/p&gt;
-
-&lt;p&gt;🦌 &lt;strong&gt;示例&lt;/strong&gt;: 考虑一个简单的游戏，其中玩家可以赢得奖励、失去奖励或不发生任何事情。我们可以有以下三个状态：赢得奖励 (W)、失去奖励 (L) 和继续玩 (C)。其中，赢得奖励和失去奖励都是吸收状态，因为一旦玩家赢得或失去奖励，游戏就结束了。&lt;/p&gt;
-
-&lt;p&gt;转移矩阵可能是这样的：
-\(\begin{array}{c|ccc}
- &amp;amp; W &amp;amp; L &amp;amp; C \\\\
-\hline
-W &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\\\
-L &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\\\
-C &amp;amp; 0.2 &amp;amp; 0.1 &amp;amp; 0.7 \\\\
-\end{array}\)&lt;/p&gt;
-
-&lt;p&gt;从这个矩阵中，我们可以看到状态 W 和 L 都是吸收状态，因为它们到自己的转移概率都是1，而到其他状态的转移概率都是0。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这是关于吸收状态的基本介绍。这些概念帮助我们更好地理解和分析马尔科夫链的行为和性质。你对这些内容有什么问题吗？或者还有其他方面你想了解的吗？🤔📘&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续探讨马尔科夫链的更多概念。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-17-马尔科夫链的应用&quot;&gt;话题: 1.7 马尔科夫链的应用&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;马尔科夫链有许多实际应用，下面是一些常见的应用示例：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. 生态学&lt;/strong&gt;: 在生态学中，马尔科夫链可以用来模拟动植物种群的动态，例如预测某种动植物种群在未来的数量。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. 经济学&lt;/strong&gt;: 在经济学中，马尔科夫链可以用来模拟经济系统中的各种随机过程，例如股票价格的变动、消费者的购买行为等。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. 计算机科学&lt;/strong&gt;: 马尔科夫链在计算机科学中有广泛的应用，例如在随机算法、计算机网络中的路由选择、以及机器学习中的某些算法中。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 工程学&lt;/strong&gt;: 在工程学中，马尔科夫链可以用来模拟系统的可靠性，例如预测机器何时可能出现故障。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5. 金融&lt;/strong&gt;: 在金融领域，马尔科夫链被用来模拟金融市场的行为，例如股票价格、汇率等的变动。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;6. 语言学&lt;/strong&gt;: 在自然语言处理中，马尔科夫链被用来生成文本，例如聊天机器人或自动写作系统。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这只是马尔科夫链在各种领域中应用的一些简单示例。由于马尔科夫链具有描述随机过程的能力，因此它在许多领域都有广泛的应用。&lt;/p&gt;
-
-&lt;p&gt;你对这些应用有什么问题吗？或者你想要深入探讨其中的某个应用或其他相关概念吗？🤔📘&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我希望了解马尔科夫链在计算机网络中路由选择的应用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;马尔科夫链在计算机网络中的路由选择应用&quot;&gt;马尔科夫链在计算机网络中的路由选择应用&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;背景&lt;/strong&gt;: 在计算机网络中，路由是确定数据包从源到目的地最佳路径的过程。由于网络的动态性和不确定性，选择最佳路径是一个复杂的问题。马尔科夫链为这一问题提供了一个随机化的解决方案，可以帮助路由器在面对网络变化时做出快速而准确的决策。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;马尔科夫链如何帮助路由选择&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;状态定义&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;每个网络节点（如路由器或交换机）可以被视为一个状态。&lt;/li&gt;
-      &lt;li&gt;数据包从一个节点转移到另一个节点的概率可以基于多种因素，如网络拥塞、链路质量、距离等。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;转移概率&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;转移概率可以基于历史数据、网络拥塞或其他实时信息来确定。&lt;/li&gt;
-      &lt;li&gt;例如，如果一个链接经常失败或拥塞，它的转移概率可能会降低。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;路由决策&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;当数据包到达路由器时，路由器可以使用马尔科夫链的稳态分布来确定下一个节点。&lt;/li&gt;
-      &lt;li&gt;稳态分布为路由器提供了从当前节点到每个可能的下一个节点的最佳转移概率。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;动态调整&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;由于网络状况可能随时变化，所以转移概率矩阵可能需要定期更新。&lt;/li&gt;
-      &lt;li&gt;当网络状况发生变化时，例如链路失败或新节点加入，马尔科夫链可以迅速调整，为路由决策提供最新的建议。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;灵活性&lt;/strong&gt;：马尔科夫链允许路由器在网络状况发生变化时快速调整其路由决策。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;减少拥塞&lt;/strong&gt;：通过选择最佳路径，可以减少网络中的拥塞和延迟。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;自适应&lt;/strong&gt;：马尔科夫链可以根据网络的实时状况进行自我调整。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是马尔科夫链在计算机网络路由选择中的基本应用。它提供了一种随机化的方法来处理网络的不确定性和动态性。你对这个应用有什么问题吗？或者还有其他方面你想了解的吗？📚🤔&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在这个应用中，路由器的马尔科夫链稳态分布如何得到&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在计算机网络中的路由选择应用中，马尔科夫链的稳态分布可以通过多种方法计算。这个稳态分布代表了当时间趋近于无穷时，系统中的状态概率。换句话说，它描述了在长时间内，数据包在网络中从一个节点转移到另一个节点的平均概率。&lt;/p&gt;
-
-&lt;p&gt;以下是计算稳态分布的常见方法：&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;1-转移矩阵法&quot;&gt;1. 转移矩阵法&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;定义转移矩阵 $P$。每个元素 $P_{ij}$​ 表示从节点 $i$ 转移到节点 $j$ 的概率。&lt;/li&gt;
-  &lt;li&gt;为了找到稳态分布 $\pi$，我们需要解方程 $\pi P = \pi$。其中，$\pi$ 是一个行向量，其元素之和为1。&lt;/li&gt;
-  &lt;li&gt;为了确保解的存在和唯一性，通常需要满足某些条件，例如链是不可约的和正常返的。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;2-模拟法&quot;&gt;2. 模拟法&lt;/h3&gt;
-
-&lt;p&gt;由于计算稳态分布的解析方法可能在大型网络中变得复杂，所以模拟方法成为了一种流行的选择。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;使用转移矩阵模拟数据包在网络中的行为。&lt;/li&gt;
-  &lt;li&gt;统计每个节点被访问的次数。&lt;/li&gt;
-  &lt;li&gt;经过足够长的时间，这些访问次数的比例将逼近稳态分布。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;3-幂法&quot;&gt;3. 幂法&lt;/h3&gt;
-
-&lt;p&gt;在某些情况下，可以使用幂法迭代地计算稳态分布。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;随机选择一个初始分布。&lt;/li&gt;
-  &lt;li&gt;通过多次应用转移矩阵来更新这个分布。&lt;/li&gt;
-  &lt;li&gt;经过足够多的迭代，分布将收敛到稳态分布。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;计算稳态分布是马尔科夫链理论中的核心部分，它为我们提供了关于系统长期行为的洞察。在计算机网络的路由选择应用中，稳态分布为路由器提供了关于如何最优地转发数据包的指导。&lt;/p&gt;
-
-&lt;p&gt;你对这些计算方法有什么问题吗？或者还有其他方面你想了解的吗？🤔📚&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请以示例的方式介绍模拟法&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！🦌🔍&lt;/p&gt;
-
-&lt;p&gt;让我们使用一个简单的马尔科夫链模型来演示如何使用模拟法计算稳态分布。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;示例：天气模型&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;考虑一个简单的天气模型，其中有三个状态：晴天 (S)、雨天 (R) 和多云 (C)。我们可以使用以下的转移矩阵来描述从一个状态到另一个状态的转移概率：&lt;/p&gt;
-
-\[\begin{array}{c|ccc}
- &amp;amp; S &amp;amp; R &amp;amp; C \\\\
-\hline
-S &amp;amp; 0.6 &amp;amp; 0.3 &amp;amp; 0.1 \\\\
-R &amp;amp; 0.4 &amp;amp; 0.4 &amp;amp; 0.2 \\\\
-C &amp;amp; 0.2 &amp;amp; 0.3 &amp;amp; 0.5 \\\\
-\end{array}\]
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;模拟法&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;初始化&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;选择一个初始状态，例如 S。&lt;/li&gt;
-      &lt;li&gt;定义一个计数器来记录每个状态被访问的次数。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;模拟&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;基于当前状态和转移矩阵，随机选择下一个状态。&lt;/li&gt;
-      &lt;li&gt;更新计数器。&lt;/li&gt;
-      &lt;li&gt;重复此过程多次。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;计算稳态分布&lt;/strong&gt;:&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;在模拟结束后，计算每个状态被访问的比例。&lt;/li&gt;
-      &lt;li&gt;这些比例将逼近稳态分布。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;现在，我们可以使用上面的转移矩阵进行模拟。为了简单起见，我们可以模拟1000次转移，并计算每个状态被访问的比例。这些比例应该接近真实的稳态分布。&lt;/p&gt;
-
-&lt;p&gt;让我们开始模拟：&lt;/p&gt;
-
-&lt;p&gt;Finished working&lt;/p&gt;
-
-&lt;p&gt;Hide work&lt;/p&gt;
-
-&lt;p&gt;python&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Transition matrix
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Initial state (Sunny)
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;num_transitions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;state_counts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Simulate transitions
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_transitions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;next_state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;state_counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next_state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;next_state&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Calculate proportions
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;proportions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;state_counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_transitions&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;proportions&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;RESULT&lt;/p&gt;
-
-&lt;p&gt;array([0.427, 0.331, 0.242])&lt;/p&gt;
-
-&lt;p&gt;模拟结果如下：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;晴天 (S) 的比例：约为 $0.427$&lt;/li&gt;
-  &lt;li&gt;雨天 (R) 的比例：约为 $0.331$&lt;/li&gt;
-  &lt;li&gt;多云 (C) 的比例：约为 $0.242$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;通过这次模拟，我们得到了三种天气状态的近似稳态分布。&lt;/p&gt;
-
-&lt;p&gt;请注意，由于模拟法的随机性，每次模拟的结果可能会有所不同。但是，随着模拟次数的增加，结果会越来越接近真实的稳态分布。&lt;/p&gt;
-
-&lt;p&gt;你还有其他问题或想要继续了解的内容吗？🤔📚🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题了，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续探讨马尔科夫链的更多内容。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题-18-马尔科夫链蒙特卡洛方法-mcmc&quot;&gt;话题: 1.8 马尔科夫链蒙特卡洛方法 (MCMC)&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;MCMC简介&lt;/strong&gt;: 马尔科夫链蒙特卡洛方法是一种基于马尔科夫链的统计模拟方法，用于从复杂的概率分布中抽样。这种方法经常用于统计推断和贝叶斯分析。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;为什么需要MCMC?&lt;/strong&gt; 在许多统计问题中，我们需要从一个复杂的概率分布中抽样，但直接抽样可能很困难或不可能。MCMC提供了一种解决方案，通过构建一个马尔科夫链，其稳态分布与目标分布相同，然后使用该链进行抽样。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MCMC的工作原理&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;初始化&lt;/strong&gt;: 选择一个初始样本。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;迭代&lt;/strong&gt;: 从当前样本出发，使用某种建议机制提议一个新的样本，并使用接受/拒绝准则决定是否接受这个新样本。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;抽样&lt;/strong&gt;: 经过足够多的迭代后，收集的样本将近似于目标分布。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;常见的MCMC算法&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Metropolis-Hastings&lt;/li&gt;
-  &lt;li&gt;Gibbs采样&lt;/li&gt;
-  &lt;li&gt;Hamiltonian蒙特卡洛&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;应用&lt;/strong&gt;: MCMC在统计学、机器学习、物理学等许多领域都有广泛的应用。它可以用来估计复杂模型的参数、进行贝叶斯推断，或者解决其他涉及抽样的问题。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是关于马尔科夫链蒙特卡洛方法的基本介绍。MCMC为我们提供了一种强大的工具，可以处理许多统计和计算问题。你对这个话题有什么问题吗？或者还有其他方面你想了解的吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;介绍Gibbs采样&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！Gibbs采样是MCMC算法的一种，它在统计学和机器学习中广泛应用。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;gibbs采样&quot;&gt;Gibbs采样&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Gibbs采样简介&lt;/strong&gt;: Gibbs采样是一种用于从多维联合分布中抽样的方法。它的核心思想是固定除一个变量之外的所有其他变量，并从该变量的条件分布中抽样。然后，它依次对每个变量进行这样的操作。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gibbs采样的基本步骤&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;初始化&lt;/strong&gt;: 选择一个初始样本值。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;迭代&lt;/strong&gt;: 对于每个变量：
-    &lt;ul&gt;
-      &lt;li&gt;固定其他所有变量。&lt;/li&gt;
-      &lt;li&gt;从当前变量的条件分布中抽样新的值。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;抽样&lt;/strong&gt;: 重复第2步足够多次后，收集的样本将逼近目标联合分布。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;为什么使用Gibbs采样?&lt;/strong&gt; Gibbs采样特别适用于条件分布容易抽样但联合分布难以直接抽样的情况。例如，在一些贝叶斯模型中，给定其他变量，某些变量的条件分布可能是已知的和易于抽样的分布（如正态分布或伽马分布）。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gibbs采样与其他MCMC方法的比较&lt;/strong&gt;: 与Metropolis-Hastings等其他MCMC方法相比，Gibbs采样的一个主要优势是它不需要选择建议分布或计算接受率。但是，如果某些条件分布难以抽样，Gibbs采样可能不是最佳选择。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;应用&lt;/strong&gt;: Gibbs采样在统计学、机器学习和图像处理中有广泛的应用。例如，它经常用于估计贝叶斯网络、混合模型和潜在变量模型的参数。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是关于Gibbs采样的基本介绍。它是MCMC方法家族中的一员，为我们提供了一种有效的抽样工具。你对这个话题有什么问题吗？或者还有其他方面你想了解的吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;请举例介绍Gibbs采样&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的！让我们通过一个简单的例子来说明Gibbs采样的工作原理。🦌📖&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;例子二维高斯分布&quot;&gt;例子：二维高斯分布&lt;/h2&gt;
-
-&lt;p&gt;假设我们想从一个二维正态分布中抽样，其中 X1X_1X1​ 和 X2X_2X2​ 是随机变量，它们的联合分布为：&lt;/p&gt;
-
-&lt;p&gt;\(f(X_1, X_2) \sim N\left(\begin{bmatrix}\mu_1 \\ \mu_2 \end{bmatrix}, \begin{bmatrix}\sigma_1^2 &amp;amp; \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 &amp;amp; \sigma_2^2 \end{bmatrix}\right)\)
-其中，$\mu_1, \mu_2$​ 是均值，$\sigma_1, \sigma_2$是标准偏差，$\rho$ 是两者之间的相关系数。&lt;/p&gt;
-
-&lt;p&gt;为了简化，我们假设 $\mu_1 = \mu_2 = 0, \sigma_1 = \sigma_2 = 1$，并且 $\rho = 0.5$。&lt;/p&gt;
-
-&lt;p&gt;我们的目标是从这个分布中抽样，但假设我们不知道如何从整个二维分布中直接抽样。但我们知道如何从条件分布中抽样：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;$X_1&lt;/td&gt;
-          &lt;td&gt;X_2 \sim N(\rho X_2, \sqrt{1-\rho^2})$&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;$X_2&lt;/td&gt;
-          &lt;td&gt;X_1 \sim N(\rho X_1, \sqrt{1-\rho^2})$&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;我们可以使用Gibbs采样来从这两个条件分布中抽样。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gibbs采样步骤&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;选择一个初始点，例如 $X_1 = 0, X_2 = 0$&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;对于每次迭代：&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;a. 固定 $X_2$，从 $(X_1&lt;/td&gt;
-          &lt;td&gt;X_2)$​ 中抽样新的 $X_1$值。&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;b. 固定 $X_1$，从 $(X_2&lt;/td&gt;
-          &lt;td&gt;X_1)$​ 中抽样新的 $X_2$值。&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;重复步骤2足够多次。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;现在，我们将进行Gibbs采样并模拟1000个样本点。&lt;/p&gt;
-
-&lt;p&gt;Finished working&lt;/p&gt;
-
-&lt;p&gt;Hide work&lt;/p&gt;
-
-&lt;p&gt;python&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Gibbs sampling for bivariate normal distribution
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gibbs_sampling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# Sampling from conditional distributions
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Parameters
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;iterations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Get samples
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gibbs_sampling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rho&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Plot
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;figsize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;samples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;blue&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;Gibbs Sampling: Bivariate Normal Distribution&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xlabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;$X_1$&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ylabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;$X_2$&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这是使用Gibbs采样从二维正态分布中获得的1000个样本点的散点图。从图中可以看出，样本点分布在一个椭圆形的区域内，这与我们期望的二维正态分布的形状相一致。
-&lt;img src=&quot;/images/Gibbs.png&quot; alt=&quot;picture not found&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;通过Gibbs采样，我们能够有效地从条件分布中抽样，并逼近目标的联合分布。&lt;/p&gt;
-
-&lt;p&gt;这个例子展示了Gibbs采样的基本思想和如何在实践中应用它。你还有其他问题或想要继续了解的内容吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续深入探讨马尔科夫链的内容。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题19-马尔科夫链的收敛性&quot;&gt;话题：1.9 马尔科夫链的收敛性&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;收敛性简介&lt;/strong&gt;: 当我们讨论马尔科夫链的稳态分布时，一个重要的问题是：这个链实际上是否会收敛到这个分布？换句话说，经过足够多的步骤后，状态的分布是否会稳定下来并接近某个固定的分布？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;马尔科夫链的收敛性属性&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;遍历性 (Ergodicity)&lt;/strong&gt;: 如果每个状态都可以从任何其他状态经过有限步骤到达，那么该链是遍历的。遍历性确保了链的收敛性。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;非周期性&lt;/strong&gt;：如果链的状态不是以固定的周期重复出现，那么该链是非周期的。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;正常返还 (Positive Recurrence)&lt;/strong&gt;: 如果从某个状态开始，返回到该状态的期望时间是有限的，那么该状态是正常返还的。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;收敛的证据&lt;/strong&gt;: 为了确定马尔科夫链是否收敛到稳态分布，我们可以使用多种方法：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;视觉检查&lt;/strong&gt;: 绘制状态的样本路径，查看它是否稳定下来。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;统计测试&lt;/strong&gt;: 使用如Geweke诊断或Gelman-Rubin诊断等统计方法。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;比较多个链&lt;/strong&gt;: 从不同的初始状态开始多个链，查看它们是否收敛到相同的分布。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;为什么收敛性重要?&lt;/strong&gt;: 马尔科夫链的收敛性是确保我们从链中得到的样本代表所需分布的关键。特别是在MCMC方法中，如果链没有收敛，那么得到的样本就不可靠。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是关于马尔科夫链收敛性的基本介绍。理解和确保链的收敛性是使用马尔科夫链和MCMC方法的关键。你对这个话题有什么问题吗？或者还有其他方面你想了解的吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，我们继续探讨马尔科夫链的下一个话题。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题110-马尔科夫链的应用领域&quot;&gt;话题：1.10 马尔科夫链的应用领域&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;马尔科夫链，特别是其MCMC变种，已广泛应用于多种领域。以下是一些主要应用领域的概述：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;统计学与贝叶斯推断&lt;/strong&gt;: 在复杂的统计模型中，直接计算后验分布的期望值或方差可能是困难的，或者无法解析地计算。MCMC方法，如Gibbs采样和Metropolis-Hastings算法，被用来从后验分布中抽样，以获得这些统计量的估计。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;物理学&lt;/strong&gt;: 在统计物理学中，MCMC方法被用来模拟粒子系统，以研究其在不同温度下的性质。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;生物信息学&lt;/strong&gt;: MCMC用于对生物序列进行比对、结构预测和其他复杂的生物信息学任务。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;计算机视觉&lt;/strong&gt;: MCMC方法用于图像分割、目标跟踪和其他计算机视觉任务。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;人工智能与机器学习&lt;/strong&gt;: 马尔科夫链被用于随机优化算法、学习贝叶斯网络结构以及其他AI任务。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;计算机网络&lt;/strong&gt;: 如我们之前讨论的，马尔科夫链在计算机网络中被用于路由选择、网络性能优化等。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;金融与经济学&lt;/strong&gt;: 在金融模型中，MCMC方法被用来估计资产价格的分布、风险管理和其他金融任务。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;环境科学&lt;/strong&gt;: 在环境科学和气象学中，MCMC方法被用来估计复杂的地球系统模型的参数。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;社会科学&lt;/strong&gt;: 在经济学、心理学和社会学中，MCMC被用于估计复杂的统计模型，如混合效应模型或结构方程模型。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;马尔科夫链和MCMC方法由于其强大的统计抽样能力，在多种领域中都有广泛的应用。这只是一些主要应用的概述，实际上，它们的应用远远超过这些。&lt;/p&gt;
-
-&lt;p&gt;这就是关于马尔科夫链应用领域的简要介绍。你对这个话题有什么问题吗？或者还有其他方面你想了解的吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;介绍MCMC方法在图像分割、目标跟踪中的应用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！MCMC（Markov Chain Monte Carlo）方法在计算机视觉领域，尤其是在图像分割和目标跟踪中，有着广泛的应用。🦌🔍&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;图像分割&quot;&gt;图像分割&lt;/h2&gt;
-
-&lt;p&gt;图像分割是将图像分割成多个区域的过程，每个区域内部具有相似的特性（如颜色、纹理或形状）。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MCMC在图像分割中的应用&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;概率模型&lt;/strong&gt;：通常，我们为图像定义一个概率模型，例如马尔科夫随机场（MRF）。这个模型将相邻像素的相似性和区域内部的一致性考虑在内。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;能量最小化&lt;/strong&gt;：图像分割的目标通常是找到一个分割，使得某种能量函数或代价函数最小化。MCMC方法，如Metropolis-Hastings或Gibbs采样，可以用来从概率模型的后验分布中抽样，并搜索能量最小的配置。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;数据驱动的方法&lt;/strong&gt;：在一些方法中，观察到的数据（例如，图像的像素值）被直接用于驱动MCMC过程，从而实现更有效的分割。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;目标跟踪&quot;&gt;目标跟踪&lt;/h2&gt;
-
-&lt;p&gt;目标跟踪是在视频序列中连续地定位一个或多个目标的过程。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MCMC在目标跟踪中的应用&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;粒子滤波&lt;/strong&gt;：粒子滤波是一种常用的MCMC方法，用于在视频中跟踪目标。它通过抽样一组“粒子”来近似目标的状态分布，并使用MCMC方法更新这些粒子。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;动态模型&lt;/strong&gt;：目标的运动通常由一个动态模型描述，例如随机运动模型。MCMC方法可以用来从这种模型中抽样，以预测目标在下一帧中的位置。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;观测模型&lt;/strong&gt;：观测模型描述了如何从视频帧中提取关于目标的信息。MCMC方法可以结合观测模型，更准确地更新目标的位置和状态。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;多目标跟踪&lt;/strong&gt;：在多目标跟踪的场景中，MCMC方法可以用来解决数据关联问题，即确定哪些观测与哪些目标相对应。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是MCMC方法在图像分割和目标跟踪中的应用概述。由于其强大的抽样和优化能力，MCMC方法在计算机视觉领域得到了广泛的应用。你还有其他问题或想了解的内容吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;介绍MCMC方法在多目标跟踪的应用&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！在多目标跟踪中，我们的目标是在连续的视频帧中跟踪多个移动目标。这是一个具有挑战性的任务，因为我们需要处理目标之间的交互、遮挡、入场和离场等问题。MCMC方法在这里扮演了关键的角色，尤其是在数据关联方面。🦌🎥&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;mcmc在多目标跟踪中的应用&quot;&gt;MCMC在多目标跟踪中的应用&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-数据关联&quot;&gt;1. &lt;strong&gt;数据关联&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;多目标跟踪的主要挑战之一是数据关联：确定在连续帧中观测到的哪些目标与之前帧中的哪些目标相对应。MCMC方法可以用来从所有可能的关联配置中抽样，从而找到最佳的目标匹配。&lt;/p&gt;
-
-&lt;h3 id=&quot;2-随机有限集-rfs-框架&quot;&gt;2. &lt;strong&gt;随机有限集 (RFS) 框架&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;RFS是一种用于多目标跟踪的数学框架。在这个框架中，目标的数量和状态被建模为随机有限集。MCMC方法，如Metropolis-Hastings，可以在RFS框架内部使用，以从目标的后验分布中抽样。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-多假设跟踪-mht&quot;&gt;3. &lt;strong&gt;多假设跟踪 (MHT)&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;MHT是一种多目标跟踪方法，它维护了多个关联假设。每个假设都是目标关联的可能配置。MCMC方法可以用来在这些假设之间进行转换，以及创建新的假设。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-生物启发的方法&quot;&gt;4. &lt;strong&gt;生物启发的方法&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;有些多目标跟踪方法从生物学中获得启示，例如，模拟动物群体的行为。在这些方法中，MCMC可以用来模拟目标之间的互动，如避免碰撞或群体行为。&lt;/p&gt;
-
-&lt;h3 id=&quot;5-目标生成和消失&quot;&gt;5. &lt;strong&gt;目标生成和消失&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;在视频中，新目标可能会进入视野，而旧目标可能会离开。MCMC方法可以用来估计新目标的产生率和现有目标的消失率。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;总之，MCMC方法在多目标跟踪中提供了一种强大的工具，用于处理数据关联、估计目标状态和处理目标交互。这些方法的灵活性和能力使它们成为计算机视觉中这一复杂任务的理想选择。&lt;/p&gt;
-
-&lt;p&gt;你还有其他问题或想要了解的内容吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有了，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，让我们继续深入探讨马尔科夫链和其相关领域的其他方面。🦌📘&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;话题111-马尔科夫链的扩展和变种&quot;&gt;话题：1.11 马尔科夫链的扩展和变种&lt;/h1&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;马尔科夫链是马尔科夫过程的一种特殊情况，其中系统在离散的时间步骤中发展。然而，还有其他与马尔科夫链相关的概念和扩展，它们在多种应用中都很有价值。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;马尔科夫决策过程 (MDP)&lt;/strong&gt;: 这是一种考虑了决策制定者的行动的马尔科夫链扩展。在每个状态，决策者可以选择一个行动，这个行动将影响系统进入下一个状态的概率。MDPs在强化学习和控制理论中有广泛的应用。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;隐藏马尔科夫模型 (HMM)&lt;/strong&gt;: 在HMM中，系统的真实状态是不可观测的，但每个状态会产生一个可观测的输出。HMMs在语音和手写识别、生物信息学和其他领域中有广泛的应用。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;马尔科夫跳跃系统&lt;/strong&gt;: 这是一种在连续时间内考虑状态转移的马尔科夫链扩展。系统的状态在随机时间间隔内跳转，而不是在固定的时间步骤中。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;量子马尔科夫链&lt;/strong&gt;: 这是马尔科夫链的一个量子版本，其中状态转移是由量子力学的规则决定的。这些链在量子计算和量子信息理论中有应用。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;非均匀马尔科夫链&lt;/strong&gt;: 这些是考虑了时间变化的转移概率的马尔科夫链。例如，转移概率可能会随着时间或其他外部因素而变化。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这些只是与马尔科夫链相关的一些扩展和变种的简要概述。每个都有其自己的理论和应用领域。你对这些扩展有什么具体的问题，或者想要深入了解哪个方面？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;我想要具体了解马尔科夫决策过程&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;当然可以！马尔科夫决策过程（MDP）是一个在决策理论和强化学习中广泛使用的数学模型。🦌🎲&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;马尔科夫决策过程-mdp-基本定义&quot;&gt;马尔科夫决策过程 (MDP) 基本定义&lt;/h2&gt;
-
-&lt;p&gt;一个马尔科夫决策过程可以定义为一个四元组 $(S, A, P, R)$，其中：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;$S$&lt;/strong&gt;: 一个有限的状态集合。&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;$A$&lt;/strong&gt;: 一个有限的动作集合。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;$P$&lt;/strong&gt;: 状态转移概率。对于每个状态 $s \in S$ 和动作 $a \in A$，$P(s’&lt;/td&gt;
-          &lt;td&gt;s, a)$是在状态 $s$ 采取动作 $a$ 后转移到状态 $s’$ 的概率。&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;$R$&lt;/strong&gt;: 奖励函数。对于每个状态 $s\in S$ 和动作 $a\in A$,$R(s,a)$ 是在状态 $s$ 采取动作 $a$ 时获得的即时奖励的期望值。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;mdp的特性&quot;&gt;MDP的特性&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;策略&lt;/strong&gt;：策略 $\pi$ 是一个映射，将每个状态 $s$ 映射到一个动作 $a$。策略定义了在给定状态下应该采取的动作。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;值函数&lt;/strong&gt;：给定策略 $\pi$，值函数 $V^\pi(s)$ 为状态 $s$ 定义了从该状态开始并遵循策略 $\pi$ 可以获得的预期总奖励。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Bellman方程&lt;/strong&gt;：值函数满足Bellman方程，它提供了一个递归的方式来计算值函数。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;最优策略&lt;/strong&gt;：最优策略 $\pi^*$ 是使值函数最大化的策略。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;mdp的应用&quot;&gt;MDP的应用&lt;/h2&gt;
-
-&lt;p&gt;MDP模型在许多实际应用中都很有用，尤其是在需要做出一系列决策以最大化某种长期收益的情境中。例如：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;强化学习&lt;/strong&gt;：MDP是强化学习的基础，其中智能体学习如何在环境中行动以最大化某种累积奖励。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;机器人技术&lt;/strong&gt;：用于导航、路径规划和其他任务的决策制定。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;经济学和金融&lt;/strong&gt;：用于投资决策、价格优化等。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;医疗决策制定&lt;/strong&gt;：例如，确定最佳的治疗方案或药物剂量。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这就是马尔科夫决策过程的基础概念和应用。你还有其他问题或想要深入了解哪个方面吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题了，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，让我们继续探讨与马尔科夫决策过程（MDP）相关的更高级的概念和技术。🦌📚&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;话题112-马尔科夫决策过程-mdp-的进阶概念&quot;&gt;话题：1.12 马尔科夫决策过程 (MDP) 的进阶概念&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;1-部分可观察的马尔科夫决策过程-pomdp&quot;&gt;1. &lt;strong&gt;部分可观察的马尔科夫决策过程 (POMDP)&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;POMDP是MDP的一个扩展，其中智能体不能直接观察到真实的环境状态。相反，它只能基于观察来间接地推断状态。POMDPs在那些涉及不确定性和信息不完整的情境中特别有用。&lt;/p&gt;
-
-&lt;h3 id=&quot;2-连续状态和动作空间&quot;&gt;2. &lt;strong&gt;连续状态和动作空间&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;在某些应用中，状态和/或动作空间可能是连续的，而不是离散的。这增加了计算值函数和策略的复杂性。通常使用函数逼近方法，如神经网络，来处理这些情况。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-模型自由强化学习&quot;&gt;3. &lt;strong&gt;模型自由强化学习&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;在许多实际应用中，MDP的模型（即状态转移概率和奖励函数）可能是未知的。在这种情况下，智能体需要通过与环境的互动来学习模型。这称为模型自由强化学习。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-多任务和迁移学习&quot;&gt;4. &lt;strong&gt;多任务和迁移学习&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;在多任务学习中，智能体需要在多个相关的任务上学习和执行策略。迁移学习是一种方法，其中在一个任务上学到的知识被用于帮助解决另一个任务。&lt;/p&gt;
-
-&lt;h3 id=&quot;5-多智能体强化学习&quot;&gt;5. &lt;strong&gt;多智能体强化学习&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;在多智能体设置中，多个智能体在同一个环境中互动。他们可以合作、竞争或两者兼有。这种设置引入了额外的复杂性，因为每个智能体的策略都会影响其他智能体。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这些是马尔科夫决策过程和强化学习的一些高级概念和技术。每个都有其自己的研究领域和实际应用。你对这些进阶概念有什么具体的问题，或者想要深入了解哪个方面吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题，请继续&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，让我们继续深入探讨与马尔科夫决策过程（MDP）和强化学习相关的主题。🦌📘&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;话题113-马尔科夫决策过程-mdp-的解决策略和算法&quot;&gt;话题：1.13 马尔科夫决策过程 (MDP) 的解决策略和算法&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;1-值迭代&quot;&gt;1. &lt;strong&gt;值迭代&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;值迭代是一种迭代算法，用于计算给定MDP的值函数。它通过反复应用Bellman方程来更新值函数，直到值函数收敛为止。&lt;/p&gt;
-
-&lt;h3 id=&quot;2-策略迭代&quot;&gt;2. &lt;strong&gt;策略迭代&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;策略迭代包括两个阶段：策略评估和策略改进。在策略评估阶段，给定当前策略，计算其值函数。在策略改进阶段，基于当前的值函数来更新策略。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-蒙特卡洛方法&quot;&gt;3. &lt;strong&gt;蒙特卡洛方法&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;蒙特卡洛方法是一种模型自由的方法，通过对环境进行采样来估计值函数和策略。这种方法在状态空间很大或模型未知的情况下特别有用。&lt;/p&gt;
-
-&lt;h3 id=&quot;4-时间差分学习-td-learning&quot;&gt;4. &lt;strong&gt;时间差分学习 (TD Learning)&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;时间差分学习是一种结合了动态规划和蒙特卡洛方法的方法。它使用当前的值函数估计来更新值函数。&lt;/p&gt;
-
-&lt;h3 id=&quot;5-q-learning&quot;&gt;5. &lt;strong&gt;Q-learning&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Q-learning是一种著名的模型自由的TD学习方法。它学习一个动作值函数，即Q函数，而不是状态值函数。&lt;/p&gt;
-
-&lt;h3 id=&quot;6-actor-critic方法&quot;&gt;6. &lt;strong&gt;Actor-Critic方法&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;Actor-Critic结合了值函数方法和策略搜索方法。它有两部分：Actor（负责策略）和Critic（负责值函数）。&lt;/p&gt;
-
-&lt;h3 id=&quot;7-深度强化学习-drl&quot;&gt;7. &lt;strong&gt;深度强化学习 (DRL)&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;深度强化学习结合了深度学习和强化学习。它使用深度神经网络来近似值函数、策略或模型。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;这些是解决马尔科夫决策过程和进行强化学习的一些主要策略和算法。每个方法都有其特定的应用和优势。你对这些策略和算法有什么具体的问题，或者想要深入了解哪个方面吗？🤔📘🦌&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有问题了&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;好的，如果你以后有任何其他问题或需要深入探讨某个话题，请随时告诉我。感谢你选择Mr. Ranedeer来帮助你学习马尔科夫链和相关内容。祝你学习愉快，并取得更多的进步！🦌📘🌟&lt;/p&gt;
-
-&lt;p&gt;如果你需要其他帮助或有其他话题想要探讨，也请随时告诉我！&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry></feed>
+&lt;p&gt;行为模式的分析可以为目标重识别提供非常有价值的上下文信息，帮助我们更准确地识别目标。&lt;/p&gt;</content><author><name>Mingkai Qiu</name></author><category term="content" /><summary type="html">/language Chinese</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/tool/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/tool/content</id><content type="html" xml:base="http://localhost:5555/tool/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-08-23-Markov.html&quot;&gt;Markov&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;learning from Chatgpt&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="tool" /><summary type="html">Content</summary></entry><entry><title type="html">Learning Content</title><link href="http://localhost:5555/paper/2023-08-24-content.html" rel="alternate" type="text/html" title="Learning Content" /><published>2023-08-24T00:00:00+08:00</published><updated>2023-08-24T00:00:00+08:00</updated><id>http://localhost:5555/paper/content</id><content type="html" xml:base="http://localhost:5555/paper/2023-08-24-content.html">&lt;h1 id=&quot;content&quot;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-18-BSTAT.html&quot;&gt;BSTAT&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS 2022&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-STGCN.html&quot;&gt;STGCN&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IJCAI2018&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/content/2023-09-19-TGCN.html&quot;&gt;TGCN&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS, 2020&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>Mingkai Qiu</name></author><category term="paper" /><summary type="html">Content</summary></entry></feed>
